@@ -1,0 +1,20 @@
+.navlist {
+    background-color: #c94040;
+}
+nav {
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+
+.dropdown-menu {
+    list-style: none;
+    display: flex;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+}
+#searchicon {
+}
