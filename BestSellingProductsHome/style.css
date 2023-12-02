@@ -1,0 +1,63 @@
+/*table{
+    border-style: solid;
+    vertical-align: center;
+    width: 600;
+    height:200;
+    font-family: courier;
+    font-size: 28pt;
+    font-style: bold;
+    border-color: purple;
+    border-width: 5px;
+    text-align: center;
+ 
+    
+}
+.f{
+    border-color: green;
+    border-width: 7px;
+    border-style: dotted;
+    text-align: center;
+}
+.s{
+    border-color: blue;
+    border-width: 5px;
+    border-style: dashed;
+}*/
+
+.best-selling-products{
+    text-align: center;
+    vertical-align: center;
+    background-position: center;
+    padding: 20px;
+    border-color: bisque;
+    background-position: center;
+    background-color: white;
+    border-style: 20px ;
+}
+table{
+    border-style: solid 20px ;
+    border-width: 10 px;
+    border-color: brown ;
+    font-style: bold;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: white ;
+   
+   
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: center;
+    min-height: 100vh; /* Set minimum height to cover the entire viewport */
+    background-color:blanchedalmond;
+  }
+  
+  
+  td {
+    padding: 10px;
+    text-align: center;
+  }
