@@ -24,40 +24,60 @@
     border-style: dashed;
 }*/
 
-.best-selling-products{
-    text-align: center;
-    vertical-align: center;
-    background-position: center;
-    padding: 20px;
-    border-color: bisque;
-    background-position: center;
-    background-color: white;
-    border-style: 20px ;
-}
-table{
-    border-style: solid 20px ;
-    border-width: 10 px;
-    border-color: brown ;
-    font-style: bold;
-    width: 100%;
-    border: 1px solid #ddd;
-    background-color: white ;
-   
-   
+/* el hagat el fo2 dih kolha baftkr biha hagt  */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:blanchedalmond;
+
 }
 
-body {
+h1 {
+text-align: center;
+}
+
+.container {
+    width: 600px;
+    margin: 20px auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    vertical-align: center;
-    min-height: 100vh; /* Set minimum height to cover the entire viewport */
-    background-color:blanchedalmond;
-  }
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    border: 3px solid black;
+     align-items: center;
+     border-radius: 25px;
+     overflow:scroll;
+
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
   
+    transition: transform 0.3s;
+    border: 3px solid black;
+    border-radius: 25px;
+
+}
+/* 3ala shan ya3ml transform */
+.card:hover {
+    transform: scale(1.05);
+}
   
-  td {
-    padding: 10px;
-    text-align: center;
-  }
+.card img {
+width: 100%;
+}
+
+.card h3 {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.card p {
+margin-bottom: 20px;
+}
