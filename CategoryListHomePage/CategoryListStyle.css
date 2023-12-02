@@ -1,0 +1,46 @@
+.CategoryMenu
+{
+    height:80%;
+    width: 22%;
+    font-size: 14px;
+    float: left;
+    z-index: 2;
+    background-color: bisque;
+}
+
+.CategoryMenu ul
+{
+   margin-left: 10px;
+}
+
+.CategoryMenu ul li
+{
+    list-style-type: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.CategoryMenu ul li:hover
+{
+    color :white; 
+}
+
+.CategoryMenu ul li ul {
+    display: none;
+    z-index: 10;
+    top: 10px; 
+}
+
+.CategoryMenu ul li:hover > ul {
+    display: block;
+    height: 400px;
+    width: 400px;
+    margin-left: 14%;
+    padding: 0 100px 10px 10px;
+    position: fixed;
+    background: #ececec;
+    box-shadow: 4px 1px 4px 1px rgba(0,0,0,0.5);
+    color: black;
+    
+}
