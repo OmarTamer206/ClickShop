@@ -27,28 +27,72 @@
 /* el hagat el fo2 dih kolha baftkr biha hagt  */
 body {
     font-family: "Arial", sans-serif;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
 }
 
+.container {
+    border: 3px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.containerWrapper {
+    overflow: hidden; /* Hide anything outside the wrapper */
+    border: 3px solid black;
+    border-radius: 25px; /* Border radius for the wrapper */
+    margin-right: 5px; /* Create space for the scrollbar on the right */
+}
+
 .card-container {
     width: 450px;
     height: 600px;
-    margin: 20px auto;
+
     display: flex;
     /* flex-wrap: wrap; */
     /* justify-content: space-around; */
     flex-direction: column;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     align-items: center;
     border-radius: 25px;
     overflow: scroll;
+    /* 
+    
+    overflow scroll means that if the content exceeded the 
+    height or width , it will be scrollable 
+
+    overflow-x hidden means that i am hiding the horizontal
+    scrollbar
+
+    */
+    overflow-x: hidden;
     padding: 10px;
+}
+
+.card-container::-webkit-scrollbar {
+    width: 13px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.card-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .card {
