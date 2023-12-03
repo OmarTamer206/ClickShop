@@ -26,58 +26,102 @@
 
 /* el hagat el fo2 dih kolha baftkr biha hagt  */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color:blanchedalmond;
-
+    background-color: blanchedalmond;
 }
 
 h1 {
-text-align: center;
+    text-align: center;
 }
 
-.container {
-    width: 600px;
+.card-container {
+    width: 450px;
+    height: 600px;
     margin: 20px auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
     flex-direction: column;
     border: 3px solid black;
-     align-items: center;
-     border-radius: 25px;
-     overflow:scroll;
-
+    align-items: center;
+    border-radius: 25px;
+    overflow: scroll;
+    padding: 10px;
 }
 
 .card {
     width: 300px;
-    height: 500px;
+    min-height: 450px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     border-radius: 8px;
-  
+
     transition: transform 0.3s;
     border: 3px solid black;
     border-radius: 25px;
-
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
 }
+
+.imgCard {
+    display: flex;
+    justify-content: center;
+}
+
+.card img {
+    width: 250px !important;
+    height: 320px;
+}
+
+.card h3 {
+    margin: 15px 0px 20px 8px !important;
+}
+
+.card p {
+    margin: 8px 5px !important;
+    font-size: 18px;
+}
+
+.ratesStars {
+    display: inline-block;
+    margin-top: 5px;
+    height: 25px !important;
+}
+
+.ratesStars img {
+    width: 20px !important;
+    height: 20px;
+}
+
+.rating p {
+    font-size: 20px;
+    margin: 0px 0px 10px 5px !important;
+    vertical-align: middle;
+}
+
+.reviewsCount {
+    display: inline-block;
+}
+
 /* 3ala shan ya3ml transform */
 .card:hover {
     transform: scale(1.05);
 }
-  
+
 .card img {
-width: 100%;
+    width: 100%;
 }
 
 .card h3 {
-font-size: 20px;
-margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .card p {
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
