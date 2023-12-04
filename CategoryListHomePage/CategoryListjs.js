@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuItem.classList.add("active");
             var submenu = menuItem.querySelector(".submenu");
             if (submenu) {
-                submenu.style.display = "block";
+                submenu.style.display = "flex";
             }
         });
 
