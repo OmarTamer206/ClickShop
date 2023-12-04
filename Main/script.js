@@ -1,3 +1,5 @@
+// Category List Start
+
 document.addEventListener("DOMContentLoaded", function () {
     var menuItems = document.querySelectorAll(".menu-item");
 
@@ -30,3 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Category List End
