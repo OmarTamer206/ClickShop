@@ -1,20 +1,170 @@
-.navlist {
-    background-color: #c94040;
+body {
+    background-color: black;
 }
+
 nav {
-    justify-content: space-evenly;
-    align-items: center;
+    padding: 0px 150px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 18% 48%;
+    grid-template-rows: 1fr;
+
+    grid-template-areas: "logo search  account help cart lang";
+}
+
+nav a {
+    margin: 10px 56px 20px 55px;
+}
+
+nav a img {
+    width: 200px;
+    grid-area: logo;
+    margin: 0px;
+}
+
+.search {
+    grid-area: search;
+    margin: auto 5px;
+    position: relative;
+    height: 60px;
     display: flex;
+    justify-content: center;
+}
+
+.search input {
+    width: 600px;
+    height: 46px;
+    text-align: left;
+    font-size: 14pt;
+    /* border: 3px solid black; */
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(208, 212, 208);
+    padding-left: 70px;
+}
+#searchicon {
+    position: absolute;
+    left: 27px;
+    top: 15px;
+}
+#searchbtn {
+    margin: auto auto;
+    grid-area: lang;
+    width: 120px;
+    height: 46px;
+    text-align: center;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    border-radius: 29px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+.account {
+    grid-area: account;
+    margin: auto auto;
+    position: relative;
+}
+
+#accIcon {
+    width: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    left: 14px;
 }
 
 .dropdown-menu {
-    list-style: none;
-    display: flex;
+    width: 46px !important;
 }
 
-.dropdown-menu li a {
-    text-decoration: none;
-    color: black;
+.dropdown-menu li {
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    margin: auto;
 }
-#searchicon {
+
+.dropdown-item {
+    width: 100%;
+    margin: auto 0px;
+    padding: auto 0px;
+    transition: all 0.2s ease-in-out;
+}
+.dropdown-item:hover {
+    background-color: rgb(193, 137, 69);
+}
+
+.btn {
+    width: 150px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border: none;
+}
+
+.helpBtn {
+    grid-area: help;
+    margin: auto auto;
+    position: relative;
+}
+
+#helpicon {
+    position: absolute;
+    top: 11px;
+    left: 0px;
+    width: 50px;
+}
+
+.helpBtn button {
+    width: 100px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    padding: 0px 20px 0px 0px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.cartBtn {
+    grid-area: cart;
+    margin: auto auto;
+    position: relative;
+}
+
+.cartBtn button {
+    width: 100px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    padding: 0px 20px 0px 0px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+
+#cartIcon {
+    width: 28px;
+    margin-right: 5px;
+}
+#lang {
+    margin: auto auto;
+    grid-area: lang;
+    width: 60px;
+    height: 46px;
+    text-align: center;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
 }
