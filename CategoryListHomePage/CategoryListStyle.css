@@ -1,46 +1,96 @@
-.CategoryMenu
-{
-    height:80%;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.CategoryMenu {
+    min-height: 40vh;
     width: 22%;
     font-size: 14px;
-    float: left;
+
     z-index: 2;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    /* padding: 2px 0px; */
+}
+hr {
+    width: 80%;
+    border: 1px solid gray;
+    margin: 0 auto;
+    padding: 0;
+}
+.menu-list {
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    vertical-align: middle;
 }
 
-.CategoryMenu ul
-{
-   margin-left: 10px;
-}
-
-.CategoryMenu ul li
-{
+.menu-item {
     list-style-type: none;
     font-weight: bold;
-    margin-top: 10px;
+    font-size: 14pt;
+    margin: 10px 0px;
     cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.CategoryMenu ul li:hover
-{
-    color :white; 
+.menu-item:hover {
+    color: rgb(234, 193, 105);
 }
 
-.CategoryMenu ul li ul {
+.submenu {
     display: none;
     z-index: 10;
-    top: 10px; 
+    /* 
+    
+    Controls the top and left of the sub menu 
+    
+    */
+    top: 40px;
+    left: 30px;
+    margin: 20px 10px;
+    border-radius: 25px;
+    /* padding: 19px; */
 }
 
+.submenu li {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 12pt;
+    margin: 10px 10px;
+    cursor: pointer;
+    height: 30px;
+    text-align: start;
+
+    width: 100%;
+}
+.submenu li:hover {
+    color: white;
+}
 .CategoryMenu ul li:hover > ul {
-    display: block;
+    display: flex;
+    justify-content: center;
     height: 400px;
     width: 400px;
-    margin-left: 14%;
+    /* margin-left: 14%; */
     padding: 0 100px 10px 10px;
     position: fixed;
     background: #ececec;
-    box-shadow: 4px 1px 4px 1px rgba(0,0,0,0.5);
+    /* box-shadow: 4px 1px 4px 1px rgba(0, 0, 0, 0.5); */
     color: black;
-    
+}
+.submenu-item {
+    display: inline-block;
+    font-size: 14pt;
 }
