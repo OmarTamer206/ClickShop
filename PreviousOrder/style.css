@@ -18,55 +18,308 @@
   margin: 10px 0px;
     }*/
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
 
-    
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #F2F2F2;
-      }
-      
-      h1 {
-        text-align: center;
-        font-size: 1.5em;
-        padding: 20px 0;
-        color: #2F4F4F;
-      }
-      
-      .allorders {
-        width: 80%;
-        margin: 0 auto;
-        border-collapse: collapse;
-        border-radius: 4px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      
-      .allorders tr {
-        border-bottom: 1px solid #ddd;
-      }
-      
-      .Order {
-        margin: 10px 0px;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .Onum {
-        font-weight: bold;
-        color: #2F4F4F;
-        font-size: 1.1em;
-      }
-      
-      .Odate {
-        color: #777;
-        font-size: 0.9em;
-      }
-      
-      .Ototal {
-        font-size: 1.1em;
-        font-weight: bold;
-      }
-    
+header {
+    padding: 10px 150px 0px 150px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 18% 48%;
+    grid-template-rows: 1fr;
+
+    grid-template-areas: "logo search  account help cart";
+}
+
+header a img {
+    width: 200px;
+    grid-area: logo;
+    /* margin-right: 20px; */
+}
+
+.search {
+    grid-area: search;
+    margin: auto 5px;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    width: 600px;
+    height: 46px;
+    text-align: left;
+    font-size: 14pt;
+    /* border: 3px solid black; */
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(208, 212, 208);
+    padding-left: 70px;
+}
+#searchicon {
+    position: absolute;
+    left: 27px;
+    top: 15px;
+}
+#searchbtn {
+    margin: auto auto;
+    grid-area: lang;
+    width: 120px;
+    height: 46px;
+    text-align: center;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    border-radius: 29px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+.account {
+    grid-area: account;
+    margin: auto auto;
+    position: relative;
+}
+
+#accIcon {
+    width: 30px;
+    margin-right: 2px;
+    /* position: absolute;
+  z-index: 1;
+  top: 9px;
+  left: 14px; */
+}
+
+.dropdown-menu {
+    width: 46px !important;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+.dropdown-item {
+    width: 100%;
+    margin: auto 0px;
+    padding: auto 0px;
+    transition: all 0.2s ease-in-out;
+}
+.dropdown-item:hover {
+    background-color: rgb(193, 137, 69);
+}
+
+.btn {
+    width: 150px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border: none;
+}
+
+.helpBtn {
+    grid-area: help;
+    margin: auto auto;
+    position: relative;
+}
+
+#helpicon {
+    /* position: absolute;
+  top: 11px;
+  left: 0px; */
+    width: 28px;
+    margin-left: 2px;
+}
+
+.helpBtn button {
+    width: 100px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    padding: 0px 20px 0px 0px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.cartBtn {
+    grid-area: cart;
+    margin: auto auto;
+    position: relative;
+}
+
+.cartBtn button {
+    width: 100px;
+    height: 46px;
+    text-align: end;
+    background-color: rgb(193, 137, 69);
+    border-radius: 2px;
+    padding: 0px 20px 0px 0px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+
+#cartIcon {
+    width: 28px;
+    margin-right: 5px;
+}
+
+h1 {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.allorders {
+    width: 80%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+    margin-top: 10px; */
+
+    margin: 10px auto 150px auto;
+
+    border-collapse: collapse;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.allorders tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.Order {
+    margin: 10px 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.Onum {
+    font-weight: bold;
+    color: #2f4f4f;
+    font-size: 1.1em;
+}
+
+.Odate {
+    color: #2f4f4f;
+    font-weight: bold;
+
+    font-size: 0.9em;
+}
+
+.Ototal {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2f4f4f;
+}
+.info {
+    font-size: 0.9em;
+    color: rgb(150, 149, 149);
+}
+
+.Order:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+}
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+    margin-top: 100px;
+}
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
