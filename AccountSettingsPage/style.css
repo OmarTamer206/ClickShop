@@ -1,13 +1,13 @@
 /* Nav Style Start */
 
 header {
-    padding: 10px 150px 0px 150px;
+    padding: 10px 70px 10px 70px;
     background-color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: 18% 48%;
-    grid-template-rows: 1fr;
-
-    grid-template-areas: "logo search  account help cart";
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    z-index: 150;
 }
 
 header a img {
