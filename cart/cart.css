@@ -8,6 +8,9 @@
   
   .tab-header {
     display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
   }
   
   .tab-icon {
