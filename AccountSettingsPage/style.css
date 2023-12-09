@@ -189,30 +189,160 @@ header a img {
 .sideBar li:hover {
     font-size: 26px;
 }
-
+/* edit profile start */
 .editProfile {
-    background-color: #e91e63;
+    background-color: white;
     width: 850px;
     height: 100%;
 }
+
+#editP {
+    display: flex;
+    flex-direction: column;
+    border: #24262b solid 3px;
+    border-radius: 25px;
+    width: 850px;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 3px;
+    width: 600px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+/* edit profile end */
+
+/* add billing start */
 .addBilling {
-    background-color: aqua;
+    background-color: white;
     width: 850px;
     height: 100%;
     display: none;
 }
+
+#addB {
+    display: flex;
+    flex-direction: column;
+    border: #24262b solid 3px;
+    border-radius: 25px;
+    width: 850px;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 3px;
+    width: 600px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+/* add billing end */
+
+/* edit billing start */
 .editBilling {
-    background-color: rgb(13, 255, 0);
+    background-color: white;
     width: 850px;
     height: 100%;
     display: none;
 }
+#editB {
+    display: flex;
+    flex-direction: column;
+    border: #24262b solid 3px;
+    border-radius: 25px;
+    width: 850px;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 3px;
+    width: 600px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* edit billing end */
+
+/* chnage theme start */
 .changeTheme {
-    background-color: black;
+    background-color: rgb(211, 208, 208);
     width: 850px;
     height: 100%;
     display: none;
 }
+
+button {
+    border: 0;
+    background: white;
+    padding: 50px;
+    margin: 22px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+button:hover img {
+    filter: brightness(80%);
+}
+/* change theme end */
 
 /* Footer Style Start */
 

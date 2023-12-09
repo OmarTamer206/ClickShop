@@ -153,16 +153,97 @@
 
             <div class="sections">
                 <div class="editProfile">
-                    <form action="">
-                        <input type="file" src="" alt="" />
+                    <form id="editP">
+                        <!-- <input type="file" src="" alt="" /> -->
+                        <label>Name :</label>
+                        <input type="text" name="name" /><br />
+                        <label>Email :</label>
+                        <input type="email" name="email" /><br />
+                        <label>Password :</label>
+                        <input type="password" name="pass" /><br />
+                        <label>Phone Number :</label>
+                        <input type="number" name="phone" /><br />
+                        <label>Gender :</label>
+                        <input type="text" name="gender" /><br />
+                        <label>Profile Picture :</label>
+                        <input type="file" name="pic" /><br />
+                        <input type="submit" name="submit" />
                     </form>
                 </div>
 
-                <div class="addBilling"></div>
+                <div class="addBilling">
+                    <form id="addB">
+                        <label>City :</label>
+                        <select name="city">
+                            <option value="cairo">Cairo</option>
+                            <option value="alex">Alexandria</option>
+                            <option value="aswan">Aswan</option>
+                            <option value="portsaid">Port Said</option>
+                            <option value="giza">Giza</option></select
+                        ><br />
+                        <label>Street :</label>
+                        <input type="text" name="street" /><br />
+                        <label>Building Number :</label>
+                        <input type="number" name="building" /><br />
+                        <label>Floor :</label>
+                        <input type="number" name="floor" /><br />
+                        <label>Apartment Number :</label>
+                        <input type="number" name="apartment" /><br />
+                        <input type="submit" value="Add" />
+                    </form>
+                </div>
 
-                <div class="editBilling"></div>
+                <div class="editBilling">
+                    <form id="editB">
+                        <label>Choose Address :</label>
+                        <select name="address">
+                            <option value="address1">Address 1</option>
+                            <option value="address2">Adderess 2</option>
+                            <option value="address3">Address 3</option>
+                            <option value="address4">Address 4</option>
+                            <option value="address5">Address 5</option></select
+                        ><br />
+                        <label>City :</label>
+                        <select name="city">
+                            <option value="cairo">Cairo</option>
+                            <option value="alex">Alexandria</option>
+                            <option value="aswan">Aswan</option>
+                            <option value="portsaid">Port Said</option>
+                            <option value="giza">Giza</option></select
+                        ><br />
+                        <label>Street :</label>
+                        <input type="text" name="street" /><br />
+                        <label>Building Number :</label>
+                        <input type="number" name="building" /><br />
+                        <label>Floor :</label>
+                        <input type="number" name="floor" /><br />
+                        <label>Apartment Number :</label>
+                        <input type="number" name="apartment" /><br />
+                        <input type="submit" value="Edit" />
+                        <input type="submit" value="Remove" />
+                    </form>
+                </div>
 
-                <div class="changeTheme"></div>
+                <div class="changeTheme">
+                    <button>
+                        <img
+                            src="https://www.color-hex.com/palettes/4628.png"
+                            alt=""
+                        />
+                    </button>
+                    <button>
+                        <img
+                            src="https://www.color-hex.com/palettes/15066.png"
+                            alt=""
+                        />
+                    </button>
+                    <button>
+                        <img
+                            src="https://digitalsynopsis.com/wp-content/uploads/2017/06/beautiful-color-palettes-combinations-schemes-beautiful-blues.png"
+                            alt=""
+                        />
+                    </button>
+                </div>
             </div>
         </div>
 
