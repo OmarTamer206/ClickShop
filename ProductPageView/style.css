@@ -1,3 +1,7 @@
+:root {
+    --swiper-theme-color: #e99b1e;
+}
+
 /* Nav Style Start */
 
 header {
@@ -153,201 +157,301 @@ header a img {
 
 /* Nav Style End */
 
-.main {
+/* Extra Styling for Main Start*/
+
+main {
     display: flex;
-    justify-content: center;
-    width: 80vw;
-    margin: 50px auto 0px auto;
-    min-height: 50vh;
+    margin: 55px 80px;
 }
 
-.sideBar {
-    width: 300px;
-    min-height: 50vh;
-    border: 3px solid black;
-    border-radius: 25px;
-    padding: 10px;
-    margin-right: 50px;
+/* Extra Styling for Main End*/
+
+/* Product Preview Start */
+.container {
+    width: 700px;
+    height: 700px;
+}
+h2 {
+    display: inline;
 }
 
-.sideBar ul {
-    list-style: none;
+.uppersection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.middle {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    padding-left: 0;
+    padding: 30px;
+    justify-content: space-around;
 }
 
-.sideBar li {
+#price {
+    font-size: 20px;
+    margin: 3px 0px 8px 0px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ratesStars {
+    display: inline-block;
+    /* margin-top: 5px; */
+    height: 25px !important;
+}
+
+.ratesStars img {
+    width: 20px !important;
+    height: 20px;
+}
+
+.rating p {
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+    vertical-align: middle;
+}
+
+.reviewsCount {
+    display: inline-block;
+}
+
+.container button {
+    background-color: darkorange;
+    height: 40px;
+    color: white;
+    padding: 5px;
+    font-size: 16pt;
+    border: none;
+    border-radius: 25px;
+}
+
+/* Product Preview End */
+
+/* Comment Section Start */
+
+.commentSectionWrap {
+    overflow: hidden; /* Hide anything outside the wrapper */
+    border: 3px solid black;
+    border-radius: 25px; /* Border radius for the wrapper */
+    margin-right: 15px; /* Create space for the scrollbar on the right */
+    width: 350px;
+    height: 600px;
+}
+
+.CommentAndRating {
+    /* border: 3px solid black; */
+    border-radius: 15px;
+    /* margin: 15px; */
+    position: relative;
+    width: 350px;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.CommentAndRating::-webkit-scrollbar {
+    width: 13px;
+}
+
+.CommentAndRating::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+.CommentAndRating::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.CommentAndRating::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.Header {
+    text-align: center;
+}
+
+.Comment {
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.User {
+    font-weight: bold;
+    color: #000;
+}
+
+.Hour {
+    margin-left: 25px;
+}
+
+.Rating1,
+.Rating2,
+.Rating3 {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(243, 239, 17);
+    margin-bottom: 10px;
+}
+
+.Rating1 .star,
+.Rating2 .star,
+.Rating3 .star {
+    cursor: pointer;
+}
+
+.Rating1 .star:hover,
+.Rating2 .star:hover,
+.Rating3 .star:hover {
+    transform: scale(1.5);
+}
+
+.Text {
+    color: black;
+}
+
+.Comment hr {
+    margin: 0 auto;
+    border: none;
+    height: 2px;
+    width: 250px;
+    background-color: black;
+}
+
+/* Comment Section End */
+
+/* Swipers Start */
+.swiper {
+    width: 80%;
+    height: 550px;
+    margin: 0px auto;
+}
+
+.swiper-slide {
+    text-align: center;
     font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s linear;
-}
+    background: #fff;
 
-.sideBar li:hover {
-    font-size: 26px;
-}
-/* edit profile start */
-.editProfile {
-    background-color: white;
-    width: 850px;
-    height: 100%;
-}
-
-#editP {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
-    border: #24262b solid 3px;
-    border-radius: 25px;
-    width: 850px;
-    height: 100%;
-    text-align: center;
-    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    border-radius: 3px;
-    width: 600px;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-/* edit profile end */
-
-/* add billing start */
-.addBilling {
-    background-color: white;
-    width: 850px;
-    height: 100%;
-    display: none;
-}
-
-#addB {
-    display: flex;
-    flex-direction: column;
-    border: #24262b solid 3px;
-    border-radius: 25px;
-    width: 850px;
-    height: 100%;
-    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
-    justify-content: center;
 }
 
-label {
-    margin-bottom: 5px;
-}
-
-input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    border-radius: 3px;
-    width: 600px;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-/* add billing end */
-
-/* edit billing start */
-.editBilling {
-    background-color: white;
-    width: 850px;
+.swiper-slide img {
+    display: block;
+    width: 100%;
     height: 100%;
-    display: none;
-}
-#editB {
-    display: flex;
-    flex-direction: column;
-    border: #24262b solid 3px;
-    border-radius: 25px;
-    width: 850px;
-    height: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
 }
 
-label {
-    margin-bottom: 5px;
+.swiper-pagination {
+    margin-top: 150px;
 }
 
-input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    border-radius: 3px;
-    width: 600px;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* edit billing end */
-
-/* chnage theme start */
-.changeTheme {
-    background-color: rgb(211, 208, 208);
-    width: 850px;
-    height: 100%;
-    display: none;
-}
-
-button {
-    border: 0;
-    background: white;
-    padding: 50px;
-    margin: 22px;
-}
-
-img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.card {
+    width: 250px;
+    height: 425px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
+    border-radius: 8px;
+
+    transition: transform 0.3s;
+    border: 3px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
 }
 
-button:hover img {
-    filter: brightness(80%);
+.imgCard {
+    display: flex;
+    justify-content: center;
 }
-/* change theme end */
+
+.card img {
+    width: 175px !important;
+    height: 180px;
+}
+
+.card h3 {
+    margin: 15px 0px 20px 8px !important;
+    font-size: 12pt !important;
+}
+
+.card p {
+    margin: 8px 5px !important;
+    font-size: 10pt;
+}
+
+.ratingP {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.ratesStars {
+    display: flex;
+    /* margin-top: 5px; */
+    height: 25px !important;
+    font-size: 10pt;
+    align-items: center;
+}
+
+.ratesStars img {
+    width: 15px !important;
+    height: 15px;
+}
+
+.rating p {
+    /* margin: 0px 0px 10px 5px !important; */
+    vertical-align: middle;
+    font-size: 10pt;
+}
+
+.reviewsCount {
+    display: inline-block;
+}
+
+/* 3ala shan ya3ml transform */
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+/* Swipers End */
 
 /* Footer Style Start */
 
-.container {
-    max-width: 1170px;
+footer .container {
+    width: 1170px;
     margin: auto;
 }
 .row {
