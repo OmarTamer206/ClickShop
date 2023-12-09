@@ -153,181 +153,66 @@ header a img {
 
 /* Nav Style End */
 
-/* Sorting Style Start */
-
-main {
-    margin: 0px 80px;
-}
-
-.upperSection {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-
-.sorting label {
-    font-size: 18px;
-    margin-right: 10px;
-}
-.sorting select {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(193, 137, 69);
-    color: #ffffff;
-    cursor: pointer;
-    outline: none;
-}
-
-.sorting select:hover {
-    border-color: rgb(221, 158, 82);
-}
-
-.sorting select:focus {
-    border-color: rgb(221, 158, 82);
-    box-shadow: 0 0 5px rgb(221, 158, 82);
-}
-.sorting select option {
-    background-color: rgb(193, 137, 69);
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Sorting Style End */
-
-/* Best Selling Products Style Start */
-
-.bestSellingProducts {
-    border: 3px solid black;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    /* height: 800px; */
-    margin-top: 32px;
-    /* margin-left: 80px;
-    margin-right: 80px; */
-}
-
-.PSPcard-container {
-    width: 100%;
-    margin-top: 80px;
-    display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-around; */
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    /* border: 3px solid black; */
-    align-items: center;
-    border-radius: 25px;
-    /* overflow: scroll; */
-    /* 
-    
-    overflow scroll means that if the content exceeded the 
-    height or width , it will be scrollable 
-
-    overflow-x hidden means that i am hiding the horizontal
-    scrollbar
-
-    */
-    /* overflow-x: hidden; */
-    padding-bottom: 50px;
-}
-
-.PSPcard-container::-webkit-scrollbar {
-    width: 13px;
-}
-
-.PSPcard-container::-webkit-scrollbar-track {
-    background: #f1f1f100;
-}
-
-.PSPcard-container::-webkit-scrollbar-thumb {
-    background: #888;
-}
-.PSPcard-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.PSPcard {
-    width: 300px;
-    min-height: 450px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-
-    transition: transform 0.3s;
-    border: 3px solid black;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.PSPimgCard {
+.main {
     display: flex;
     justify-content: center;
+    width: 80vw;
+    margin: 50px auto 0px auto;
+    min-height: 50vh;
 }
 
-.PSPcard img {
-    width: 250px !important;
-    height: 280px;
+.sideBar {
+    width: 300px;
+    min-height: 50vh;
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin-right: 50px;
 }
 
-.PSPcard h3 {
-    margin: 15px 0px 20px 8px !important;
+.sideBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding-left: 0;
 }
 
-.PSPcard p {
-    margin: 8px 5px !important;
+.sideBar li {
     font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s linear;
 }
 
-.PSPratesStars {
-    display: inline-block;
-    margin-left: 5px;
-    height: 25px !important;
+.sideBar li:hover {
+    font-size: 26px;
 }
 
-.PSPratesStars img {
-    width: 20px !important;
-    height: 20px;
+.editProfile {
+    background-color: #e91e63;
+    width: 850px;
+    height: 100%;
 }
-
-.PSPrating p {
-    font-size: 20px;
-    /* margin: 0px 0px 10px 5px !important; */
-    vertical-align: middle;
+.addBilling {
+    background-color: aqua;
+    width: 850px;
+    height: 100%;
+    display: none;
 }
-
-.PSPreviewsCount {
-    display: inline-block;
+.editBilling {
+    background-color: rgb(13, 255, 0);
+    width: 850px;
+    height: 100%;
+    display: none;
 }
-
-/* 3ala shan ya3ml transform */
-.PSPcard:hover {
-    transform: scale(1.05);
+.changeTheme {
+    background-color: black;
+    width: 850px;
+    height: 100%;
+    display: none;
 }
-
-.PSPcard img {
-    width: 100%;
-}
-
-.PSPcard h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.PSPcard p {
-    margin-bottom: 20px;
-}
-/* Best Selling Products Style End */
 
 /* Footer Style Start */
 
