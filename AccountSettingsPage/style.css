@@ -206,27 +206,36 @@ header a img {
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 40px;
 }
 
-label {
+#editP label {
     margin-bottom: 5px;
 }
 
-input {
+#editP input,
+#editP select {
+    display: inline-block;
     padding: 8px;
     margin-bottom: 10px;
     border: 3px solid black;
     border-radius: 3px;
-    width: 600px;
+    width: 455px;
 }
 
-input[type="submit"] {
+#editP select {
+    text-align: center;
+}
+
+#editP input[type="submit"] {
     background-color: #4caf50;
     color: #fff;
     cursor: pointer;
+    width: 200px;
+    border-radius: 25px;
 }
 
-input[type="submit"]:hover {
+#editP input[type="submit"]:hover {
     background-color: #45a049;
 }
 /* edit profile end */
@@ -249,27 +258,34 @@ input[type="submit"]:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 40px;
 }
 
-label {
+#addB label {
     margin-bottom: 5px;
 }
 
-input {
+#addB input,
+#addB select {
     padding: 8px;
     margin-bottom: 10px;
     border: 3px solid black;
     border-radius: 3px;
-    width: 600px;
+    width: 455px;
+}
+#addB select {
+    text-align: center;
 }
 
-input[type="submit"] {
+#addB input[type="submit"] {
     background-color: #4caf50;
     color: #fff;
     cursor: pointer;
+    width: 200px;
+    border-radius: 25px;
 }
 
-input[type="submit"]:hover {
+#addB input[type="submit"]:hover {
     background-color: #45a049;
 }
 /* add billing end */
@@ -291,55 +307,77 @@ input[type="submit"]:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+    padding: 40px;
 }
 
-label {
+#editB label {
     margin-bottom: 5px;
 }
 
-input {
+#editB input,
+#editB select {
     padding: 8px;
     margin-bottom: 10px;
     border: 3px solid black;
     border-radius: 3px;
     width: 600px;
 }
+#editB select {
+    text-align: center;
+}
 
-input[type="submit"] {
+#editB input[type="submit"] {
     background-color: #4caf50;
     color: #fff;
     cursor: pointer;
+    width: 200px;
+    border-radius: 25px;
+    margin: 0px 15px;
 }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
+#edit:hover {
+    background-color: #45a049 !important;
+}
+
+#remove {
+    background-color: rgb(176, 52, 52) !important;
+}
+
+#remove:hover {
+    background-color: rgb(231, 31, 31) !important;
 }
 
 /* edit billing end */
 
 /* chnage theme start */
 .changeTheme {
-    background-color: rgb(211, 208, 208);
+    background-color: rgb(255, 255, 255);
     width: 850px;
     height: 100%;
     display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    border: #24262b solid 3px;
+    border-radius: 25px;
+    padding: 40px;
 }
 
-button {
-    border: 0;
-    background: white;
-    padding: 50px;
+.changeTheme button {
+    border: 5px solid white;
     margin: 22px;
-}
-
-img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin: 20px;
+
+    width: 150px;
+    height: 150px;
 }
 
-button:hover img {
+.changeTheme img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.changeTheme button:hover img {
     filter: brightness(80%);
 }
 /* change theme end */

@@ -155,6 +155,7 @@
                 <div class="editProfile">
                     <form id="editP">
                         <!-- <input type="file" src="" alt="" /> -->
+                        <h2>Edit Profile</h2>
                         <label>Name :</label>
                         <input type="text" name="name" /><br />
                         <label>Email :</label>
@@ -164,7 +165,11 @@
                         <label>Phone Number :</label>
                         <input type="number" name="phone" /><br />
                         <label>Gender :</label>
-                        <input type="text" name="gender" /><br />
+                        <select name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <br />
                         <label>Profile Picture :</label>
                         <input type="file" name="pic" /><br />
                         <input type="submit" name="submit" />
@@ -173,6 +178,7 @@
 
                 <div class="addBilling">
                     <form id="addB">
+                        <h2>Add Billing Address</h2>
                         <label>City :</label>
                         <select name="city">
                             <option value="cairo">Cairo</option>
@@ -195,6 +201,7 @@
 
                 <div class="editBilling">
                     <form id="editB">
+                        <h2>Edit Billing Address</h2>
                         <label>Choose Address :</label>
                         <select name="address">
                             <option value="address1">Address 1</option>
@@ -219,8 +226,10 @@
                         <input type="number" name="floor" /><br />
                         <label>Apartment Number :</label>
                         <input type="number" name="apartment" /><br />
-                        <input type="submit" value="Edit" />
-                        <input type="submit" value="Remove" />
+                        <div class="editB_Btns">
+                            <input id="edit" type="submit" value="Edit" />
+                            <input id="remove" type="submit" value="Remove" />
+                        </div>
                     </form>
                 </div>
 
