@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
+        <link rel="stylesheet" href="seller.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Add New Seller</h2>
+            <form action="#">
+                <div class="input-box">
+                    <label for="name">Seller's Name</label>
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <label for="img">Choose profile picture</label>
+                    <input
+                        type="file"
+                        id="profile-photo"
+                        class="custom-file-input"
+                        accept="image/*"
+                        name="img"
+                        required
+                    />
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Seller's Email</label>
+                    <input
+                        id="email"
+                        type="text"
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <label for="num">Seller's Phone Number</label>
+
+                    <input
+                        id="num"
+                        type="text"
+                        placeholder="Enter your phone Number"
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <label for="desc">Seller's Description</label>
+                    <textarea
+                        id="desc"
+                        placeholder="Business info"
+                        required
+                        style="resize: none"
+                    ></textarea>
+                </div>
+                <div class="input-box button">
+                    <input type="Submit" value="Add Now" />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

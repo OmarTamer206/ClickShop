@@ -8,8 +8,10 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
+
         <link rel="stylesheet" href="BootStrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="BootStrap/css/bootstrap.min.css.map" />
+
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -141,120 +143,44 @@
             </div>
         </header>
 
-        <div class="main">
-            <div class="sideBar">
-                <ul>
-                    <li id="EditP_li">Edit Profile</li>
-                    <li id="AddB_li">Add Billing Address</li>
-                    <li id="EditB_li">Edit Billing Address</li>
-                    <li id="changeT_li">Change Theme</li>
-                </ul>
-            </div>
-
-            <div class="sections">
-                <div class="editProfile">
-                    <form id="editP">
-                        <!-- <input type="file" src="" alt="" /> -->
-                        <h2>Edit Profile</h2>
-                        <label>Name :</label>
-                        <input type="text" name="name" /><br />
-                        <label>Email :</label>
-                        <input type="email" name="email" /><br />
-                        <label>Password :</label>
-                        <input type="password" name="pass" /><br />
-                        <label>Phone Number :</label>
-                        <input type="number" name="phone" /><br />
-                        <label>Gender :</label>
-                        <select name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                        <br />
-                        <label>Profile Picture :</label>
-                        <input type="file" name="pic" /><br />
-                        <input type="submit" name="submit" />
-                    </form>
+        <main>
+            <form>
+                <h1>Contact Us</h1>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                        >Email address</label
+                    >
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter Your Email Here"
+                    />
+                    <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="tArea" class="form-label">Message</label>
+                    <div class="input-box">
+                        <textarea
+                            placeholder="Enter Your Message Here"
+                            required
+                            style="resize: none"
+                            id="tArea"
+                            class="form-control"
+                        ></textarea>
+                    </div>
                 </div>
 
-                <div class="addBilling">
-                    <form id="addB">
-                        <h2>Add Billing Address</h2>
-                        <label>City :</label>
-                        <select name="city">
-                            <option value="cairo">Cairo</option>
-                            <option value="alex">Alexandria</option>
-                            <option value="aswan">Aswan</option>
-                            <option value="portsaid">Port Said</option>
-                            <option value="giza">Giza</option></select
-                        ><br />
-                        <label>Street :</label>
-                        <input type="text" name="street" /><br />
-                        <label>Building Number :</label>
-                        <input type="number" name="building" /><br />
-                        <label>Floor :</label>
-                        <input type="number" name="floor" /><br />
-                        <label>Apartment Number :</label>
-                        <input type="number" name="apartment" /><br />
-                        <input type="submit" value="Add" />
-                    </form>
-                </div>
-
-                <div class="editBilling">
-                    <form id="editB">
-                        <h2>Edit Billing Address</h2>
-                        <label>Choose Address :</label>
-                        <select name="address">
-                            <option value="address1">Address 1</option>
-                            <option value="address2">Adderess 2</option>
-                            <option value="address3">Address 3</option>
-                            <option value="address4">Address 4</option>
-                            <option value="address5">Address 5</option></select
-                        ><br />
-                        <label>City :</label>
-                        <select name="city">
-                            <option value="cairo">Cairo</option>
-                            <option value="alex">Alexandria</option>
-                            <option value="aswan">Aswan</option>
-                            <option value="portsaid">Port Said</option>
-                            <option value="giza">Giza</option></select
-                        ><br />
-                        <label>Street :</label>
-                        <input type="text" name="street" /><br />
-                        <label>Building Number :</label>
-                        <input type="number" name="building" /><br />
-                        <label>Floor :</label>
-                        <input type="number" name="floor" /><br />
-                        <label>Apartment Number :</label>
-                        <input type="number" name="apartment" /><br />
-                        <div class="editB_Btns">
-                            <input id="edit" type="submit" value="Edit" />
-                            <input id="remove" type="submit" value="Remove" />
-                        </div>
-                    </form>
-                </div>
-
-                <div class="changeTheme">
-                    <button>
-                        <img
-                            src="https://www.color-hex.com/palettes/4628.png"
-                            alt=""
-                        />
-                    </button>
-                    <button>
-                        <img
-                            src="https://www.color-hex.com/palettes/15066.png"
-                            alt=""
-                        />
-                    </button>
-                    <button>
-                        <img
-                            src="https://digitalsynopsis.com/wp-content/uploads/2017/06/beautiful-color-palettes-combinations-schemes-beautiful-blues.png"
-                            alt=""
-                        />
+                <div class="btnDiv">
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
                     </button>
                 </div>
-            </div>
-        </div>
+            </form>
+        </main>
 
         <footer class="footer">
             <div class="container">
@@ -302,6 +228,5 @@
 
         <script src="BootStrap/js/bootstrap.bundle.min.js"></script>
         <script src="BootStrap/js/bootstrap.bundle.min.js.map"></script>
-        <script src="script.js"></script>
     </body>
 </html>
