@@ -5,14 +5,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
-        <link rel="stylesheet" href="seller.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css.map" />
+        <link rel="stylesheet" href="AddAdmin.css" />
     </head>
     <body>
         <div class="wrapper">
-            <h2>Add New Seller</h2>
+            <h2>Add New Admin</h2>
             <form action="#">
                 <div class="input-box">
-                    <label for="name">Seller's Name</label>
+                    <label for="name">Admin's Name</label>
                     <input
                         id="name"
                         type="text"
@@ -20,29 +22,9 @@
                         required
                     />
                 </div>
-                <div class="input-box">
-                    <label for="img">Choose profile picture</label>
-                    <input
-                        type="file"
-                        id="profile-photo"
-                        class="custom-file-input"
-                        accept="image/*"
-                        name="img"
-                        required
-                    />
-                </div>
 
                 <div class="input-box">
-                    <label for="email">Seller's Email</label>
-                    <input
-                        id="email"
-                        type="text"
-                        placeholder="Enter your email"
-                        required
-                    />
-                </div>
-                <div class="input-box">
-                    <label for="num">Seller's Phone Number</label>
+                    <label for="num">Admin's Phone Number</label>
 
                     <input
                         id="num"
@@ -51,19 +33,40 @@
                         required
                     />
                 </div>
+
                 <div class="input-box">
-                    <label for="desc">Seller's Description</label>
-                    <textarea
-                        id="desc"
-                        placeholder="Business info"
-                        required
-                        style="resize: none"
-                    ></textarea>
+                    <label for="gender">Admin's Gender</label>
+                    <select id="gender" aria-label="Default select example">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
                 </div>
+
+                <div class="input-box">
+                    <label for="email">Admin's Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <label for="pass">Admin's Password</label>
+                    <input
+                        id="pass"
+                        type="password"
+                        placeholder="Enter your Password"
+                        required
+                    />
+                </div>
+
                 <div class="input-box button">
                     <input type="Submit" value="Add Now" />
                 </div>
             </form>
         </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js.map"></script>
     </body>
 </html>

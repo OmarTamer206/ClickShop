@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f48540;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.wrapper h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 165px;
+    border-radius: 12px;
+    background: #f48540;
+}
+
+.wrapper form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+.wrapper form .input-box {
+    margin-bottom: 18px; /* Add margin between input boxes */
+}
+
+form .input-box input,
+form .input-box textarea {
+    height: 52px; /* Adjust the height as needed */
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.form .input-box textarea {
+    resize: vertical;
+}
+
+.input-box input:focus,
+.input-box input:valid,
+.input-box textarea:focus,
+.input-box textarea:valid {
+    border-color: #f48540;
+}
+
+.form .input-box .file-label {
+    display: block;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5px;
+    text-decoration: dotted;
+}
+
+.form .input-box .file-input {
+    display: none;
+}
+
+.form .input-box .file-input + label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f48540;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.form .input-box .file-input + label:hover {
+    background-color: #0e4bf1;
+}
+
+.input-box.button input {
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #f48540;
+    cursor: pointer;
+}
+
+.input-box.button input:hover {
+    background: #0e4bf1;
+}
+
+form .text h3 {
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+
+form .text h3 a {
+    color: #4070f4;
+    text-decoration: none;
+}
+
+form .text h3 a:hover {
+    text-decoration: underline;
+}
+
+.custom-file-input {
+    color: transparent !important;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: "Select Profile Pic";
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active {
+    outline: 0;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+#profile-photo {
+    padding: 12px 115px;
+}
+
+.input-box label {
+    display: inline-block;
+    margin-bottom: 8px;
+}
