@@ -1,0 +1,61 @@
+header {
+    background-color: #23648f;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    transition: all 0.3s ease-in-out;
+}
+
+header h1:hover {
+    cursor: pointer;
+    font-size: 32pt;
+}
+
+#OverallProfit {
+    /* left: 64%; */
+    margin-right: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#OrderCount {
+    margin-left: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+aside {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin: 10px 0px;
+    /* position: absolute; */
+    /* left: 15%; */
+    /* top: 0px; */
+    color: black;
+    height: 52px;
+    vertical-align: middle;
+    border-radius: 25px;
+}
+
+aside:hover {
+    width: 250px;
+}
+
+/* to bypass bootstrap issues with nav */
+.centerDiv * {
+    box-sizing: border-box !important;
+}
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

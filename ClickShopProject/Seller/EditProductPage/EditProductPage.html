@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration or Sign Up form in HTML CSS | CodingLab</title>
+        <link
+            rel="stylesheet"
+            href="/Bootstrap_Library/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/Bootstrap_Library/css/bootstrap.min.css.map"
+        />
+        <link rel="stylesheet" href="/Seller/SellerHeader.css" />
+        <link rel="stylesheet" href="EditProduct.css" />
+    </head>
+    <body>
+        <header>
+            <aside id="OrderCount">
+                <div class="order-info">
+                    <p>Today's Orders: <strong>10</strong></p>
+                </div>
+            </aside>
+            <h1>Seller Home Screen</h1>
+            <aside id="OverallProfit">
+                <div class="order-info">
+                    <p>Overall Profit this Month: <strong>$5000</strong></p>
+                </div>
+            </aside>
+        </header>
+
+        <div class="centerDiv">
+            <div class="wrapper">
+                <h2>Edit Product</h2>
+                <form action="#">
+                    <div class="productImg">
+                        <img src="/Media/ProductImages/image.jpg" alt="" />
+                    </div>
+
+                    <div class="input-box">
+                        <label for="name">Product's Name</label>
+                        <input
+                            id="name"
+                            type="text"
+                            placeholder="Enter Product Name"
+                            required
+                        />
+                    </div>
+                    <div class="input-box">
+                        <label for="img">Product's Image</label>
+                        <input
+                            type="file"
+                            id="Product-photo"
+                            class="custom-file-input"
+                            accept="image/*"
+                            name="img"
+                            required
+                        />
+                    </div>
+                    <div class="input-box">
+                        <label for="price">Product's Price</label>
+
+                        <input
+                            id="price"
+                            type="text"
+                            placeholder="Enter your Price"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-box">
+                        <label for="brand">Product's Brand</label>
+                        <select id="brand" aria-label="Default select example">
+                            <option>Addias</option>
+                            <option>Nike</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cat">Product's Category</label>
+                        <select id="cat" aria-label="Default select example">
+                            <option>Clothes</option>
+                            <option>food</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="qty">Product's Stock Quantity</label>
+                        <input
+                            id="qty"
+                            type="num"
+                            placeholder="Enter Quantity"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-box">
+                        <label for="desc">Product's Description</label>
+                        <textarea
+                            id="desc"
+                            placeholder="Business info"
+                            required
+                            style="resize: none"
+                        ></textarea>
+                    </div>
+                    <div class="input-box button">
+                        <input type="Submit" value="Edit Now" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="/Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
+        <script src="/Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
+    </body>
+</html>
