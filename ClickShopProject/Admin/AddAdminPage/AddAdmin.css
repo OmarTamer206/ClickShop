@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: unset !important;
+}
+
+body {
+    min-height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background: #b3eca1;
+}
+
+.wrapper {
+    margin: 40px 0px;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.wrapper h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 165px;
+    border-radius: 12px;
+    background: #4caf50;
+}
+
+.wrapper form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+.wrapper form .input-box {
+    margin-bottom: 18px; /* Add margin between input boxes */
+}
+
+form .input-box input,
+form .input-box textarea {
+    height: 52px; /* Adjust the height as needed */
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.form .input-box textarea {
+    resize: vertical;
+}
+
+.input-box input:focus,
+.input-box input:valid,
+.input-box textarea:focus,
+.input-box textarea:valid {
+    border-color: #4caf50;
+}
+
+.form .input-box .file-label {
+    display: block;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5px;
+    text-decoration: dotted;
+}
+
+.form .input-box .file-input {
+    display: none;
+}
+
+.form .input-box .file-input + label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.form .input-box .file-input + label:hover {
+    background-color: #0e4bf1;
+}
+
+.input-box.button input {
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #4caf50;
+    cursor: pointer;
+}
+
+.input-box.button input:hover {
+    background: #0e4bf1;
+}
+
+form .text h3 {
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+
+form .text h3 a {
+    color: #4070f4;
+    text-decoration: none;
+}
+
+form .text h3 a:hover {
+    text-decoration: underline;
+}
+
+.input-box label {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.input-box select:hover,
+.input-box select:valid {
+    border-color: #4caf50;
+}
+
+.input-box select {
+    height: 52px; /* Adjust the height as needed */
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
