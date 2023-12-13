@@ -71,7 +71,7 @@ header a img {
 }
 
 .dropdown-menu {
-    width: 46px !important;
+    width: 46px;
 }
 
 .dropdown-menu li {

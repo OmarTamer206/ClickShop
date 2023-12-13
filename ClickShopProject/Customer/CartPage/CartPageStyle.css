@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+body {
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    background-color: bisque;
+}
+
+/*------CartPage-----*/
+
+.Pagetitle {
+    margin-top: 40px;
+}
+
+.containerCart {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 0.938em;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    margin-bottom: 2em;
+}
+
+.flexitem {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.flexitem li a {
+    color: black;
+}
+
+.flexitem li {
+    color: #453c5c;
+}
+
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.CartPage a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.CartPage ul {
+    list-style: none;
+}
+
+.CartPage img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.CartPage strong {
+    font-weight: 800;
+}
+
+.CartPage table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 200px;
+}
+
+.CartPage input::placeholder {
+    font: inherit;
+}
+
+.CartPage h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.Productcart .thumbnail {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-right: 11px;
+}
+
+.Productcart .thumbnail img {
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.Productcart .formcart {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Productcart table thead th {
+    vertical-align: middle;
+    background-color: #f2f3f5;
+}
+
+.Productcart table :where(th, td) {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.Productcart table :where(th, td):first-child {
+    text-align: left;
+    /* padding-left: 2em; */
+    width: 80px;
+}
+
+.Productcart table tbody td:first-child {
+    padding-left: 0;
+}
+
+.Productcart table td :where(.content, .quantitycontrol, p) {
+    margin: 0;
+    padding: 0;
+}
+
+.Productcart .quantitycontrol :where(button, input) {
+    width: 32px;
+    height: 32px;
+    padding: 0.25em;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.Productcart .quantitycontrol button {
+    cursor: pointer;
+}
+
+.Productcart table tbody tr {
+    border-bottom: 1px solid #000;
+}
+
+.Productcart .item-remove {
+    margin-left: 1em;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.Productcart .cartsummarystyled {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    margin: auto;
+    position: relative;
+}
+.cartsummarystyled {
+    width: fit-content;
+    margin: 2.5em 0 3em;
+    text-align: center;
+}
+
+.cartsummarystyled .cart-total {
+    background-color: #f2f3f5;
+}
+
+.cartsummarystyled .cart-total .mini-text {
+    font-size: x-small;
+    color: gray;
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        padding: 0 2em;
+    }
+}
+
+.dropdown,
+.dropdown button,
+.dropdown-menu,
+.modal-footer button {
+    width: 100%;
+    text-align: center;
+}
+
+.addressCart {
+    display: inline-block;
+    text-wrap: wrap;
+    text-align: left;
+}
+.cart-total table {
+    width: 100%;
+}
+.cart-total {
+    width: 100%;
+    /* height: 550px; */
+    margin: 40px 0px;
+}
+
+.table th {
+    width: 100px;
+}
+
+#changeAddress {
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
+
+#Checkout {
+    color: white;
+    height: 100%;
+    width: 200px;
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.lowerSection {
+    padding-left: 100px;
+}
+
+.lowerSection button {
+    margin: 25px 10px;
+    /* height: 100%; */
+}
+
+.flexwrap {
+    flex-direction: column;
+}
+
+.formcart {
+    width: 100%;
+}
+
+#carttable {
+    width: 100%;
+}

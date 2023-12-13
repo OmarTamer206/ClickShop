@@ -1,0 +1,175 @@
+/* Sorting Style Start */
+
+main {
+    margin: 0px 80px;
+}
+
+.upperSection {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.sorting label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.sorting select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(193, 137, 69);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.sorting select:hover {
+    border-color: rgb(221, 158, 82);
+}
+
+.sorting select:focus {
+    border-color: rgb(221, 158, 82);
+    box-shadow: 0 0 5px rgb(221, 158, 82);
+}
+.sorting select option {
+    background-color: rgb(193, 137, 69);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Sorting Style End */
+
+/* Best Selling Products Style Start */
+
+.bestSellingProducts {
+    border: 3px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* height: 800px; */
+    margin-top: 32px;
+    /* margin-left: 80px;
+    margin-right: 80px; */
+}
+
+.PSPcard-container {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* border: 3px solid black; */
+    align-items: center;
+    border-radius: 25px;
+    /* overflow: scroll; */
+    /* 
+    
+    overflow scroll means that if the content exceeded the 
+    height or width , it will be scrollable 
+
+    overflow-x hidden means that i am hiding the horizontal
+    scrollbar
+
+    */
+    /* overflow-x: hidden; */
+    padding-bottom: 50px;
+}
+
+.PSPcard-container::-webkit-scrollbar {
+    width: 13px;
+}
+
+.PSPcard-container::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+.PSPcard-container::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.PSPcard-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.PSPcard {
+    width: 300px;
+    min-height: 450px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+
+    transition: transform 0.3s;
+    border: 3px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.PSPimgCard {
+    display: flex;
+    justify-content: center;
+}
+
+.PSPcard img {
+    width: 250px !important;
+    height: 280px;
+}
+
+.PSPcard h3 {
+    margin: 15px 0px 20px 8px !important;
+}
+
+.PSPcard p {
+    margin: 8px 5px !important;
+    font-size: 18px;
+}
+
+.PSPratesStars {
+    display: inline-block;
+    margin-left: 5px;
+    height: 25px !important;
+}
+
+.PSPratesStars img {
+    width: 20px !important;
+    height: 20px;
+}
+
+.PSPrating p {
+    font-size: 20px;
+    /* margin: 0px 0px 10px 5px !important; */
+    vertical-align: middle;
+}
+
+.PSPreviewsCount {
+    display: inline-block;
+}
+
+/* 3ala shan ya3ml transform */
+.PSPcard:hover {
+    transform: scale(1.05);
+}
+
+.PSPcard img {
+    width: 100%;
+}
+
+.PSPcard h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.PSPcard p {
+    margin-bottom: 20px;
+}
+/* Best Selling Products Style End */
