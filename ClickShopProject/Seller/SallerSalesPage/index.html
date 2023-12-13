@@ -6,17 +6,31 @@
         <title>Document</title>
         <link
             rel="stylesheet"
-            href="/Bootstrap_Library/css/bootstrap.min.css"
+            href="../../Bootstrap_Library/css/bootstrap.min.css"
         />
         <link
             rel="stylesheet"
-            href="/Bootstrap_Library/css/bootstrap.min.css.map"
+            href="../../Bootstrap_Library/css/bootstrap.min.css.map"
         />
-        <link rel="stylesheet" href="/Seller/SellerHeader.css" />
+        <link rel="stylesheet" href="../SellerHeader.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>The order Seller Page</h1>
+        <header>
+            <aside id="OrderCount">
+                <div class="order-info">
+                    <p>Today's Orders: <strong>10</strong></p>
+                </div>
+            </aside>
+            <h1>Seller Home Screen</h1>
+            <aside id="OverallProfit">
+                <div class="order-info">
+                    <p>Overall Profit this Month: <strong>$5000</strong></p>
+                </div>
+            </aside>
+        </header>
+
+        <h1 id="titleH1">The order Seller Page</h1>
         <table class="allorders">
             <tr>
                 <td>
@@ -71,7 +85,7 @@
             </tr>
         </table>
 
-        <script src="/Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
-        <script src="/Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
+        <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
+        <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
     </body>
 </html>
