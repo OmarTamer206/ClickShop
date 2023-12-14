@@ -9,6 +9,15 @@ main {
     margin-bottom: 80px;
 }
 
+header a {
+    color: white;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
 .upperSection {
     width: 90%;
     display: flex;

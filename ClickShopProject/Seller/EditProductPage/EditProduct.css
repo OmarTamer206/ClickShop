@@ -6,6 +6,11 @@
     box-sizing: unset !important;
 }
 
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
 body {
     min-height: 100vh;
     /* display: flex;
