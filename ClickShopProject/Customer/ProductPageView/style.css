@@ -1,0 +1,386 @@
+:root {
+    --swiper-theme-color: #e99b1e;
+}
+
+/* Extra Styling for Main Start*/
+
+main {
+    display: flex;
+    margin: 55px 80px;
+}
+
+/* Extra Styling for Main End*/
+
+/* Product Preview Start */
+main .container {
+    width: 700px;
+    height: 700px;
+}
+h2 {
+    display: inline;
+}
+
+.uppersection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.middle {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+#price {
+    font-size: 20px;
+    margin: 3px 0px 8px 0px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ratesStars {
+    display: inline-block;
+    /* margin-top: 5px; */
+    height: 25px !important;
+}
+
+.ratesStars img {
+    width: 20px !important;
+    height: 20px;
+}
+
+.rating p {
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+    vertical-align: middle;
+}
+
+.reviewsCount {
+    display: inline-block;
+}
+
+.container button {
+    background-color: darkorange;
+    height: 40px;
+    color: white;
+    padding: 5px;
+    font-size: 16pt;
+    border: none;
+    border-radius: 25px;
+}
+
+/* Product Preview End */
+
+/* Comment Section Start */
+
+.commentSectionWrap {
+    overflow: hidden; /* Hide anything outside the wrapper */
+    border: 3px solid black;
+    border-radius: 25px; /* Border radius for the wrapper */
+    margin-right: 15px; /* Create space for the scrollbar on the right */
+    width: 350px;
+    height: 600px;
+}
+
+.CommentAndRating {
+    /* border: 3px solid black; */
+    border-radius: 15px;
+    /* margin: 15px; */
+    position: relative;
+    width: 350px;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.CommentAndRating::-webkit-scrollbar {
+    width: 13px;
+}
+
+.CommentAndRating::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+.CommentAndRating::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.CommentAndRating::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.Header {
+    text-align: center;
+}
+
+.Comment {
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.User {
+    font-weight: bold;
+    color: #000;
+}
+
+.Hour {
+    margin-left: 25px;
+}
+
+.Rating1,
+.Rating2,
+.Rating3 {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(243, 239, 17);
+    margin-bottom: 10px;
+}
+
+.Rating1 .star,
+.Rating2 .star,
+.Rating3 .star {
+    cursor: pointer;
+}
+
+.Rating1 .star:hover,
+.Rating2 .star:hover,
+.Rating3 .star:hover {
+    transform: scale(1.5);
+}
+
+.Text {
+    color: black;
+}
+
+.Comment hr {
+    margin: 0 auto;
+    border: none;
+    height: 2px;
+    width: 250px;
+    background-color: black;
+}
+
+/* Comment Section End */
+
+/* Swipers Start */
+.swiper {
+    width: 80%;
+    height: 550px;
+    margin: 0px auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-pagination {
+    margin-top: 150px;
+}
+
+.card {
+    width: 250px;
+    height: 425px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+
+    transition: transform 0.3s;
+    border: 3px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.imgCard {
+    display: flex;
+    justify-content: center;
+}
+
+.card img {
+    width: 175px !important;
+    height: 180px;
+}
+
+.card h3 {
+    margin: 15px 0px 20px 8px !important;
+    font-size: 12pt !important;
+}
+
+.card p {
+    margin: 3px 5px !important;
+    font-size: 10pt;
+}
+
+.ratingP {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.ratesStars {
+    display: flex;
+    /* margin-top: 5px; */
+    height: 25px !important;
+    font-size: 10pt;
+    align-items: center;
+}
+
+.ratesStars img {
+    width: 15px !important;
+    height: 15px;
+}
+
+.rating p {
+    /* margin: 0px 0px 10px 5px !important; */
+    vertical-align: middle;
+    font-size: 10pt;
+}
+
+.reviewsCount {
+    display: inline-block;
+}
+
+/* 3ala shan ya3ml transform */
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+/* Swipers End */
+
+.rateDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1005;
+}
+
+/* Stars Style Start */
+.RatingSts {
+    background-color: #24262b;
+    padding: 15px;
+    white-space: nowrap;
+    border-radius: 25px;
+
+    width: 70%;
+    min-height: 100px;
+}
+
+.RatingSts span {
+    color: white;
+    font-size: 14pt;
+}
+
+.RatingSts form {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+}
+.RatingSts form input[type="submit"] {
+    width: 150px;
+    height: 60px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(193, 137, 69);
+    color: white;
+    margin: 10px 0px;
+}
+.RatingSts span {
+    margin-right: 20px;
+}
+
+.rateSection {
+    width: 100%;
+}
+
+.leftSection {
+    margin-left: 40px;
+}
+
+.Rating1 {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(243, 239, 17);
+    margin-bottom: 10px;
+}
+
+.Rating1 .star {
+    cursor: pointer;
+}
+
+.Rating1 .star:hover {
+    transform: scale(1.5);
+}
+
+/* Stars Style End */
+
+form .input-box textarea {
+    height: 100%;
+    width: 400px;
+    outline: none;
+    padding: 15px 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    /* border-bottom-width: 2.5px; */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+form label {
+    color: white;
+}
+
+form button {
+    text-align: center;
+}

@@ -1,0 +1,102 @@
+/*.allorders{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border: 3px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100vh;
+    table-layout: fixed;
+    }
+    
+    th,td{
+
+        padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  margin: 10px 0px;
+    }*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.allorders {
+    width: 80%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+    margin-top: 10px; */
+
+    margin: 10px auto 150px auto;
+
+    border-collapse: collapse;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.allorders tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.Order {
+    margin: 10px 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.Onum {
+    font-weight: bold;
+    color: #2f4f4f;
+    font-size: 1.1em;
+}
+
+.Odate {
+    color: #2f4f4f;
+    font-weight: bold;
+
+    font-size: 0.9em;
+}
+
+.Ototal {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2f4f4f;
+}
+.info {
+    font-size: 0.9em;
+    color: rgb(150, 149, 149);
+}
+
+.Order:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+}
