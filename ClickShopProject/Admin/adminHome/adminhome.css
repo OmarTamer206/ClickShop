@@ -6,6 +6,10 @@ body {
     position: relative;
 }
 
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
 .container {
     display: flex;
     flex-direction: column;

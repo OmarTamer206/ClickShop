@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="../../Bootstrap_Library/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../Bootstrap_Library/css/bootstrap.min.css.map"
+        />
+        <link rel="stylesheet" href="../adminHeader.css" />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <aside id="OrderCount">
+                <div class="order-info">
+                    <p>Today's Orders: <strong>10</strong></p>
+                </div>
+            </aside>
+            <h1><a href="../adminHome/adminhome.html">Admin HomePage</a></h1>
+            <aside id="OverallProfit">
+                <div class="order-info">
+                    <p>Overall Profit this Month: <strong>$5000</strong></p>
+                </div>
+            </aside>
+        </header>
+
+        <h1>Feedback Page</h1>
+
+        <table class="AllOrders">
+            <tr>
+                <div class="feedback">
+                    <span class="info"
+                        >Feedback ID: <span class="OID">1</span></span
+                    >
+                </div>
+            </tr>
+
+            <tr>
+                <div class="feedback">
+                    <span class="info"
+                        >Feedback Date:
+                        <span class="ODate">30/9/2023</span></span
+                    >
+                </div>
+            </tr>
+
+            <tr>
+                <div class="feedback">
+                    <span class="info">Feedback Message: <br /> </span>
+                </div>
+            </tr>
+
+            <tr>
+                <div class="feedback">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Porro doloribus quae numquam itaque ad explicabo
+                        adipisci! Atque nulla sit, similique voluptatum
+                        perferendis laudantium omnis. Facilis fugiat porro
+                        laboriosam ipsa doloribus. Lorem ipsum dolor sit, amet
+                        consectetur adipisicing elit. Praesentium tempore
+                        dolorem dignissimos. Accusamus commodi adipisci ut totam
+                        hic, nulla, porro vero ipsum ducimus labore rerum earum
+                        deserunt ipsam! Quo, laborum?
+                    </p>
+                </div>
+            </tr>
+        </table>
+        <form id="replyForm" action="../AdminInboxPage/index.html">
+            <div class="bottomContent">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                        >Reply :</label
+                    >
+                    <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <div class="btns">
+                    <input
+                        type="submit"
+                        class="btn btn-danger"
+                        value="Dismiss"
+                    />
+                    <input
+                        type="submit"
+                        class="btn btn-primary"
+                        value="Send Reply"
+                    />
+                </div>
+            </div>
+        </form>
+
+        <script src="script.js"></script>
+        <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
+        <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
+    </body>
+</html>
