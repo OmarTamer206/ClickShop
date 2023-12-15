@@ -21,13 +21,21 @@
     </head>
     <body>
         <header>
-            <a href=""
+            <a href="../../index.html"
                 ><img
                     src="../../Media/Logo/PhotoRoom-20230131_144635.png"
                     alt=""
             /></a>
-            <form class="search">
-                <input class="search" type="text" placeholder="Search..." />
+            <form
+                class="search"
+                action="../Category-Brand-Seller-Search-Page/index.html"
+            >
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                    required
+                />
                 <svg
                     id="searchicon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,15 +74,21 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="../../LoginPage.html"
                                 >Log in / Sign Up</a
                             >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Order Page</a>
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../MyOrdersPage/index.html"
+                                >My Orders Page</a
+                            >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -82,7 +96,11 @@
                 </div>
             </div>
             <div class="helpBtn">
-                <button id="help" type="submit">
+                <button
+                    id="help"
+                    type="submit"
+                    onclick="location.href='../HelpPage/index.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
@@ -99,7 +117,11 @@
                 </button>
             </div>
             <div class="cartBtn">
-                <button id="cart" type="submit">
+                <button
+                    id="cart"
+                    type="submit"
+                    onclick="location.href='../CartPage/CartPage.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1024 1024"
@@ -162,7 +184,7 @@
 
             <div class="sections">
                 <div class="editProfile">
-                    <form id="editP">
+                    <form id="editP" action="index.html">
                         <!-- <input type="file" src="" alt="" /> -->
                         <h2>Edit Profile</h2>
                         <label>Name :</label>
@@ -195,7 +217,7 @@
                 </div>
 
                 <div class="addBilling">
-                    <form id="addB">
+                    <form id="addB" action="index.html">
                         <h2>Add Billing Address</h2>
                         <label>City :</label>
                         <select name="city">
@@ -218,7 +240,7 @@
                 </div>
 
                 <div class="editBilling">
-                    <form id="editB">
+                    <form id="editB" action="index.html">
                         <h2>Edit Billing Address</h2>
                         <label>Choose Address :</label>
                         <select name="address">

@@ -22,11 +22,21 @@
     </head>
     <body>
         <header>
-            <a href=""
-                ><img src="../../Media/Logo/PhotoRoom-20230131_144635.png" alt=""
+            <a href="../../index.html"
+                ><img
+                    src="../../Media/Logo/PhotoRoom-20230131_144635.png"
+                    alt=""
             /></a>
-            <form class="search">
-                <input class="search" type="text" placeholder="Search..." />
+            <form
+                class="search"
+                action="../Category-Brand-Seller-Search-Page/index.html"
+            >
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                    required
+                />
                 <svg
                     id="searchicon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -65,15 +75,21 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="../../LoginPage.html"
                                 >Log in / Sign Up</a
                             >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Order Page</a>
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../MyOrdersPage/index.html"
+                                >My Orders Page</a
+                            >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -81,7 +97,11 @@
                 </div>
             </div>
             <div class="helpBtn">
-                <button id="help" type="submit">
+                <button
+                    id="help"
+                    type="submit"
+                    onclick="location.href='../HelpPage/index.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
@@ -98,7 +118,11 @@
                 </button>
             </div>
             <div class="cartBtn">
-                <button id="cart" type="submit">
+                <button
+                    id="cart"
+                    type="submit"
+                    onclick="location.href='../CartPage/CartPage.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1024 1024"
@@ -150,6 +174,7 @@
         </header>
 
 
+
         <main>
 
             <div class="container">
@@ -172,7 +197,10 @@
                         </span>
                         <p class="reviewsCount">(review)</p>
                     </div>
-                    <button>Add to Cart</button>
+                    <form action="index.html">
+                        <input type="number" min="1" value="1">
+                        <button type="submit">Add to Cart</button>
+                    </form>
                    </div>
                 </div>
                 
@@ -329,13 +357,13 @@
             </main>
             <div class="rateDiv">
               <div class="RatingSts">
-                  <form action="">
+                  <form action="index.html">
                       <div class="leftSection">
                         <div class="rateSection">
                             <span class="info">Please Rate Your Order : </span>
                             <div class="Rating1">
                                 <input type="number" name="rating" hidden />
-                                <i class="bx bx-star star"></i>
+                                <i class="bx bxs-star star"></i>
                                 <i class="bx bx-star star"></i>
                                 <i class="bx bx-star star"></i>
                                 <i class="bx bx-star star"></i>
@@ -363,195 +391,242 @@
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+             
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-            </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                    <div class="imgCard">
-                        <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
                     </div>
-                    <h3>Product Name</h3>
-
-                    <p>price</p>
-
-                    <div class="ratingP">
-                        <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
-                        </span>
-                        <p class="reviewsCount">(review)</p>
-                    </div>
+                </a>
                 </div>
-              </div>
+              
+                <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/image.jpg" alt="Product Image" />
+                        </div>
+                        <h3>Product Name</h3>
+    
+                        <p>price</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/filledStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                                <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            </span>
+                            <p class="reviewsCount">(review)</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+              
+              
+              
+             
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>

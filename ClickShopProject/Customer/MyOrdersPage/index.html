@@ -21,13 +21,21 @@
     </head>
     <body>
         <header>
-            <a href=""
+            <a href="../../index.html"
                 ><img
                     src="../../Media/Logo/PhotoRoom-20230131_144635.png"
                     alt=""
             /></a>
-            <form class="search">
-                <input class="search" type="text" placeholder="Search..." />
+            <form
+                class="search"
+                action="../Category-Brand-Seller-Search-Page/index.html"
+            >
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                    required
+                />
                 <svg
                     id="searchicon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,15 +74,21 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="../../LoginPage.html"
                                 >Log in / Sign Up</a
                             >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Order Page</a>
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../MyOrdersPage/index.html"
+                                >My Orders Page</a
+                            >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -82,7 +96,11 @@
                 </div>
             </div>
             <div class="helpBtn">
-                <button id="help" type="submit">
+                <button
+                    id="help"
+                    type="submit"
+                    onclick="location.href='../HelpPage/index.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
@@ -99,7 +117,11 @@
                 </button>
             </div>
             <div class="cartBtn">
-                <button id="cart" type="submit">
+                <button
+                    id="cart"
+                    type="submit"
+                    onclick="location.href='../CartPage/CartPage.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1024 1024"
@@ -154,53 +176,61 @@
         <table class="allorders">
             <tr>
                 <td>
-                    <div class="Order">
-                        <span class="info"
-                            >Order ID: <span class="Onum">1</span></span
-                        >
+                    <a href="../DetailOrderPage/index.html">
+                        <div class="Order">
+                            <span class="info"
+                                >Order ID: <span class="Onum">1</span></span
+                            >
 
-                        <span class="Odate">
-                            <span class="info">Date :</span>30/9/2023</span
-                        >
-                        <span class="info"
-                            >Total Price:
-                            <span class="Ototal">20000</span></span
-                        >
-                    </div>
+                            <span class="Odate">
+                                <span class="info">Date :</span>30/9/2023</span
+                            >
+                            <span class="info"
+                                >Total Price:
+                                <span class="Ototal">20000</span></span
+                            >
+                        </div>
+                    </a>
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <div class="Order">
-                        <span class="info"
-                            >Order ID: <span class="Onum">2</span></span
-                        >
+                    <a href="../DetailOrderPage/index.html">
+                        <div class="Order">
+                            <span class="info"
+                                >Order ID: <span class="Onum">2</span></span
+                            >
 
-                        <span class="Odate">
-                            <span class="info">Date :</span>30/8/2023</span
-                        >
-                        <span class="info"
-                            >Total Price: <span class="Ototal">200</span></span
-                        >
-                    </div>
+                            <span class="Odate">
+                                <span class="info">Date :</span>30/8/2023</span
+                            >
+                            <span class="info"
+                                >Total Price:
+                                <span class="Ototal">200</span></span
+                            >
+                        </div>
+                    </a>
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <div class="Order">
-                        <span class="info"
-                            >Order ID: <span class="Onum">3</span></span
-                        >
+                    <a href="../DetailOrderPage/index.html">
+                        <div class="Order">
+                            <span class="info"
+                                >Order ID: <span class="Onum">3</span></span
+                            >
 
-                        <span class="Odate">
-                            <span class="info">Date :</span> 30/7/2023</span
-                        >
-                        <span class="info"
-                            >Total Price: <span class="Ototal">5000</span></span
-                        >
-                    </div>
+                            <span class="Odate">
+                                <span class="info">Date :</span> 30/7/2023</span
+                            >
+                            <span class="info"
+                                >Total Price:
+                                <span class="Ototal">5000</span></span
+                            >
+                        </div>
+                    </a>
                 </td>
             </tr>
         </table>

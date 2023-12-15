@@ -28,11 +28,19 @@
     </head>
     <body>
         <header>
-            <a href=""
+            <a href="index.html"
                 ><img src="Media/Logo/PhotoRoom-20230131_144635.png" alt=""
             /></a>
-            <form class="search">
-                <input class="search" type="text" placeholder="Search..." />
+            <form
+                class="search"
+                action="Customer/Category-Brand-Seller-Search-Page/index.html"
+            >
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                    required
+                />
                 <svg
                     id="searchicon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -71,15 +79,21 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="LoginPage.html"
                                 >Log in / Sign Up</a
                             >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Order Page</a>
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="Customer/MyOrdersPage/index.html"
+                                >My Orders Page</a
+                            >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="Customer/AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -87,7 +101,11 @@
                 </div>
             </div>
             <div class="helpBtn">
-                <button id="help" type="submit">
+                <button
+                    id="help"
+                    type="submit"
+                    onclick="location.href='Customer/HelpPage/index.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
@@ -104,7 +122,11 @@
                 </button>
             </div>
             <div class="cartBtn">
-                <button id="cart" type="submit">
+                <button
+                    id="cart"
+                    type="submit"
+                    onclick="location.href='Customer/CartPage/CartPage.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1024 1024"
@@ -162,10 +184,26 @@
                         <li class="menu-item">
                             Supermarket
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-1</li>
-                                <li class="submenu-item">Sub Menu-1</li>
-                                <li class="submenu-item">Sub Menu-1</li>
-                                <li class="submenu-item">Sub Menu-1</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-1</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-1</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-1</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-1</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -173,10 +211,26 @@
                         <li class="menu-item">
                             Fashion
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-2</li>
-                                <li class="submenu-item">Sub Menu-2</li>
-                                <li class="submenu-item">Sub Menu-2</li>
-                                <li class="submenu-item">Sub Menu-2</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-2</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-2</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-2</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-2</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -184,10 +238,26 @@
                         <li class="menu-item">
                             Health & Beauty
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-3</li>
-                                <li class="submenu-item">Sub Menu-3</li>
-                                <li class="submenu-item">Sub Menu-3</li>
-                                <li class="submenu-item">Sub Menu-3</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-3</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-3</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-3</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-3</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -195,10 +265,26 @@
                         <li class="menu-item">
                             Baby Products
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-4</li>
-                                <li class="submenu-item">Sub Menu-4</li>
-                                <li class="submenu-item">Sub Menu-4</li>
-                                <li class="submenu-item">Sub Menu-4</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-4</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-4</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-4</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-4</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -206,10 +292,26 @@
                         <li class="menu-item">
                             Phones & Tablets
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-5</li>
-                                <li class="submenu-item">Sub Menu-5</li>
-                                <li class="submenu-item">Sub Menu-5</li>
-                                <li class="submenu-item">Sub Menu-5</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-5</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-5</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-5</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-5</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -217,10 +319,26 @@
                         <li class="menu-item">
                             Home & Furniture
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-6</li>
-                                <li class="submenu-item">Sub Menu-6</li>
-                                <li class="submenu-item">Sub Menu-6</li>
-                                <li class="submenu-item">Sub Menu-6</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-6</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-6</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-6</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-6</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -228,10 +346,26 @@
                         <li class="menu-item">
                             Computing
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-7</li>
-                                <li class="submenu-item">Sub Menu-7</li>
-                                <li class="submenu-item">Sub Menu-7</li>
-                                <li class="submenu-item">Sub Menu-7</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-7</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-7</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-7</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-7</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -239,13 +373,41 @@
                         <li class="menu-item">
                             Gaming
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
-                                <li class="submenu-item">Sub Menu-8</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-8</li>
+                                </a>
                             </ul>
                         </li>
                         <hr />
@@ -253,10 +415,26 @@
                         <li class="menu-item">
                             Other Categories
                             <ul class="submenu">
-                                <li class="submenu-item">Sub Menu-9</li>
-                                <li class="submenu-item">Sub Menu-9</li>
-                                <li class="submenu-item">Sub Menu-9</li>
-                                <li class="submenu-item">Sub Menu-9</li>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-9</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-9</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-9</li>
+                                </a>
+                                <a
+                                    href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                >
+                                    <li class="submenu-item">Sub Menu-9</li>
+                                </a>
                             </ul>
                         </li>
                     </ul>
@@ -355,156 +533,162 @@
                     <h1>Best Selling Products</h1>
                     <div class="PSPcontainerWrapper">
                         <div class="PSPcard-container">
-                            <div class="PSPcard">
-                                <div class="PSPimgCard">
-                                    <img
-                                        src="Media/ProductImages/image.jpg"
-                                        alt="Product Image"
-                                    />
+                            <a href="Customer/ProductPageView/index.html">
+                                <div class="PSPcard">
+                                    <div class="PSPimgCard">
+                                        <img
+                                            src="Media/ProductImages/image.jpg"
+                                            alt="Product Image"
+                                        />
+                                    </div>
+                                    <h3>Product Name</h3>
+
+                                    <p>price</p>
+
+                                    <div class="PSPrating">
+                                        <span class="PSPratesStars">
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <p class="PSPreviewsCount">(review)</p>
+                                    </div>
                                 </div>
-                                <h3>Product Name</h3>
+                            </a>
+                            <a href="Customer/ProductPageView/index.html">
+                                <div class="PSPcard">
+                                    <div class="PSPimgCard">
+                                        <img
+                                            src="Media/ProductImages/image.jpg"
+                                            alt="Product Image"
+                                        />
+                                    </div>
+                                    <h3>Product Name</h3>
 
-                                <p>price</p>
+                                    <p>price</p>
 
-                                <div class="PSPrating">
-                                    <span class="PSPratesStars">
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                    </span>
-                                    <p class="PSPreviewsCount">(review)</p>
+                                    <div class="PSPrating">
+                                        <span class="PSPratesStars">
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <p class="PSPreviewsCount">(review)</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="PSPcard">
-                                <div class="PSPimgCard">
-                                    <img
-                                        src="Media/ProductImages/image.jpg"
-                                        alt="Product Image"
-                                    />
+                            </a>
+                            <a href="Customer/ProductPageView/index.html">
+                                <div class="PSPcard">
+                                    <div class="PSPimgCard">
+                                        <img
+                                            src="Media/ProductImages/image.jpg"
+                                            alt="Product Image"
+                                        />
+                                    </div>
+                                    <h3>Product Name</h3>
+
+                                    <p>price</p>
+
+                                    <div class="PSPrating">
+                                        <span class="PSPratesStars">
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <p class="PSPreviewsCount">(review)</p>
+                                    </div>
                                 </div>
-                                <h3>Product Name</h3>
+                            </a>
+                            <a href="Customer/ProductPageView/index.html">
+                                <div class="PSPcard">
+                                    <div class="PSPimgCard">
+                                        <img
+                                            src="Media/ProductImages/image.jpg"
+                                            alt="Product Image"
+                                        />
+                                    </div>
+                                    <h3>Product Name</h3>
 
-                                <p>price</p>
+                                    <p>price</p>
 
-                                <div class="PSPrating">
-                                    <span class="PSPratesStars">
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                    </span>
-                                    <p class="PSPreviewsCount">(review)</p>
+                                    <div class="PSPrating">
+                                        <span class="PSPratesStars">
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/filledStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                            <img
+                                                src="Media/Stars/emptyStar.png"
+                                                alt=""
+                                            />
+                                        </span>
+                                        <p class="PSPreviewsCount">(review)</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="PSPcard">
-                                <div class="PSPimgCard">
-                                    <img
-                                        src="Media/ProductImages/image.jpg"
-                                        alt="Product Image"
-                                    />
-                                </div>
-                                <h3>Product Name</h3>
-
-                                <p>price</p>
-
-                                <div class="PSPrating">
-                                    <span class="PSPratesStars">
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                    </span>
-
-                                    <p class="PSPreviewsCount">(review)</p>
-                                </div>
-                            </div>
-                            <div class="PSPcard">
-                                <div class="PSPimgCard">
-                                    <img
-                                        src="Media/ProductImages/image.jpg"
-                                        alt="Product Image"
-                                    />
-                                </div>
-                                <h3>Product Name</h3>
-
-                                <p>price</p>
-
-                                <div class="PSPrating">
-                                    <span class="PSPratesStars">
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/filledStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                        <img
-                                            src="Media/Stars/emptyStar.png"
-                                            alt=""
-                                        />
-                                    </span>
-
-                                    <p class="PSPreviewsCount">(review)</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -514,42 +698,54 @@
                             <h1>Our Popular Brands</h1>
                             <div class="logo-slider">
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo1.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo2.webp"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo3.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo4.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo5.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo6.png"
                                             alt="   "
@@ -563,42 +759,54 @@
                             <h1>Our Popular Sellers</h1>
                             <div class="logo-slider">
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo1.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo2.webp"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo3.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo4.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo5.png"
                                             alt="   "
                                     /></a>
                                 </div>
                                 <div class="item">
-                                    <a href="#">
+                                    <a
+                                        href="Customer/Category-Brand-Seller-Search-Page/index.html"
+                                    >
                                         <img
                                             src="Media/Brands/logo6.png"
                                             alt="   "

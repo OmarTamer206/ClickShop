@@ -14,6 +14,11 @@ body {
 
 /* General Style End */
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 /* Extra Style For Main Section Start */
 main {
     margin: 0px 150px;
@@ -127,7 +132,7 @@ hr {
     z-index: 13;
 }
 .submenu li:hover {
-    color: white;
+    color: rgb(241, 189, 147);
     z-index: 13;
 }
 .CategoryMenu ul li:hover > ul {

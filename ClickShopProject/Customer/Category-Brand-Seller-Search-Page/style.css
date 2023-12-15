@@ -4,6 +4,11 @@ main {
     margin: 0px 80px;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 .upperSection {
     width: 90%;
     display: flex;

@@ -22,13 +22,21 @@
     </head>
     <body>
         <header>
-            <a href=""
+            <a href="../../index.html"
                 ><img
                     src="../../Media/Logo/PhotoRoom-20230131_144635.png"
                     alt=""
             /></a>
-            <form class="search">
-                <input class="search" type="text" placeholder="Search..." />
+            <form
+                class="search"
+                action="../Category-Brand-Seller-Search-Page/index.html"
+            >
+                <input
+                    class="search"
+                    type="text"
+                    placeholder="Search..."
+                    required
+                />
                 <svg
                     id="searchicon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,15 +75,21 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="../../LoginPage.html"
                                 >Log in / Sign Up</a
                             >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Order Page</a>
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../MyOrdersPage/index.html"
+                                >My Orders Page</a
+                            >
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
+                        <li style="display: none">
+                            <a
+                                class="dropdown-item"
+                                href="../AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -83,7 +97,11 @@
                 </div>
             </div>
             <div class="helpBtn">
-                <button id="help" type="submit">
+                <button
+                    id="help"
+                    type="submit"
+                    onclick="location.href='../HelpPage/index.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
@@ -100,7 +118,11 @@
                 </button>
             </div>
             <div class="cartBtn">
-                <button id="cart" type="submit">
+                <button
+                    id="cart"
+                    type="submit"
+                    onclick="location.href='../CartPage/CartPage.html'"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1024 1024"
@@ -152,7 +174,7 @@
         </header>
 
         <main>
-            <form>
+            <form action="../../index.html">
                 <h1>Contact Us</h1>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"
@@ -164,6 +186,7 @@
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                         placeholder="Enter Your Email Here"
+                        required
                     />
                     <div id="emailHelp" class="form-text">
                         We'll never share your email with anyone else.
