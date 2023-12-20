@@ -60,7 +60,7 @@ main {
     overflow: hidden;
     border-radius: 15px;
     width: 1000px;
-    height: 700px;
+    height: 750px;
 }
 .toRight {
     animation: slideRight 0.5s ease-in-out forwards;
@@ -71,18 +71,18 @@ main {
 
 .login-form {
     width: 500px;
-    height: 700px;
+    height: 750px;
 }
 .signup-form {
     width: 500px;
-    height: 700px;
+    height: 750px;
 }
 .switch {
     color: white;
     padding: 20px;
     position: absolute;
     /* left: 15px; */
-    height: 700px;
+    height: 750px;
     width: 500px;
     background: var(--color-pink);
 }
@@ -153,4 +153,11 @@ main {
         transform: translateX(0px);
         background: var(--color-pink);
     }
+}
+
+#error,
+#errorEmailExist,
+#errorNotSamePass,
+#errorPass {
+    color: red;
 }

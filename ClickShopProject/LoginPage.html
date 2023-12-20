@@ -202,27 +202,52 @@
                         and discover the joy of online shopping with Click Shop!
                     </p>
                 </div>
-                <form class="login-form center">
+                <form class="login-form center" method="post">
                     <h1>Sign Up</h1>
                     <label for="name">Name:</label>
-                    <input id="name" class="form-input" type="text" />
+                    <input id="name" class="form-input" type="text" required />
                     <label for="phone">Phone Number:</label>
-                    <input id="phone" class="form-input" type="number" />
+                    <input
+                        id="phone"
+                        class="form-input"
+                        type="number"
+                        required
+                    />
                     <label for="gender">Gender:</label>
                     <select
                         id="gender"
                         class="form-select"
                         aria-label="Default select example"
                     >
-                        <option value="male">Male</option>
+                        <option value="male" selected>Male</option>
                         <option value="female">Female</option>
                     </select>
                     <label for="email">Email:</label>
-                    <input id="email" class="form-input" type="email" />
+                    <input
+                        id="email"
+                        class="form-input"
+                        type="email"
+                        required
+                    />
+                    <span id="errorEmailExist"></span>
                     <label for="pass">Password:</label>
-                    <input id="pass" class="form-input" type="password" />
+                    <input
+                        id="pass"
+                        class="form-input"
+                        type="password"
+                        required
+                    />
+                    <span id="errorPass"></span>
+
                     <label for="passr">Password repeat:</label>
-                    <input id="passr" class="form-input" type="password" />
+                    <input
+                        id="passr"
+                        class="form-input"
+                        type="password"
+                        required
+                    />
+                    <span id="errorNotSamePass"></span>
+
                     <button class="btn-switch green">Sign Up</button>
                     <p>
                         Already have an account?<span
@@ -232,12 +257,13 @@
                         >
                     </p>
                 </form>
-                <form class="signup-form center">
+                <form class="signup-form center" method="post">
                     <h1>Login</h1>
                     <label for="emaillogIn">Email:</label>
                     <input id="emaillogIn" class="form-input" type="text" />
                     <label for="passlogIn">Password:</label>
                     <input id="passlogIn" class="form-input" type="password" />
+                    <span id="error"></span>
                     <button class="btn-switch">Login</button>
                     <p>
                         Don't have account yet?<span
