@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 03:17 AM
+-- Generation Time: Dec 20, 2023 at 05:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -184,6 +184,20 @@ CREATE TABLE `product` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rates`
+--
+
+CREATE TABLE `rates` (
+  `r_id` int(11) NOT NULL,
+  `p_id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL,
+  `r_rating` int(11) NOT NULL,
+  `r_comment` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seller`
 --
 
@@ -282,6 +296,14 @@ ALTER TABLE `product`
   ADD KEY `cat_id` (`cat_id`);
 
 --
+-- Indexes for table `rates`
+--
+ALTER TABLE `rates`
+  ADD PRIMARY KEY (`r_id`),
+  ADD KEY `p_id` (`p_id`),
+  ADD KEY `c_id` (`c_id`);
+
+--
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
@@ -353,6 +375,12 @@ ALTER TABLE `product`
   MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `rates`
+--
+ALTER TABLE `rates`
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
@@ -402,6 +430,13 @@ ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`b_id`) REFERENCES `brand` (`b_id`),
   ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `seller` (`s_id`),
   ADD CONSTRAINT `product_ibfk_3` FOREIGN KEY (`cat_id`) REFERENCES `category` (`cat_id`);
+
+--
+-- Constraints for table `rates`
+--
+ALTER TABLE `rates`
+  ADD CONSTRAINT `rates_ibfk_1` FOREIGN KEY (`p_id`) REFERENCES `product` (`p_id`),
+  ADD CONSTRAINT `rates_ibfk_2` FOREIGN KEY (`c_id`) REFERENCES `customer` (`c_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
