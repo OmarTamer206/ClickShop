@@ -9,9 +9,5 @@ $dbhost = 'localhost';
 
 
 
-    // $sql = 'SELECT * FROM testinglines';
-    // $result = $conn->query($sql);
-
-
 
 ?>

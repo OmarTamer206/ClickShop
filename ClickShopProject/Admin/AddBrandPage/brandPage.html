@@ -26,11 +26,18 @@
         <div class="centerDiv">
             <div class="wrapper">
                 <h2>Add New Brand</h2>
-                <form action="../adminHome/adminhome.html">
+                <form
+                    id="addBrand"
+                    action="../../PHP/AccountManagement.php"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
                     <div class="input-box">
+                        <input type="hidden" name="RD" value="AB" />
                         <label for="name">Brand's Name</label>
                         <input
                             id="name"
+                            name="name"
                             type="text"
                             placeholder="Enter your name"
                             required
@@ -55,6 +62,7 @@
                             placeholder="Business info"
                             required
                             style="resize: none"
+                            name="desc"
                         ></textarea>
                     </div>
                     <div class="input-box button">

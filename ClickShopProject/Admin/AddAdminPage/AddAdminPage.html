@@ -35,7 +35,7 @@
         <div class="centerDiv">
             <div class="wrapper">
                 <h2>Add New Admin</h2>
-                <form action="../adminHome/adminhome.html">
+                <form id="addAdminForm" method="post">
                     <div class="input-box">
                         <label for="name">Admin's Name</label>
                         <input
@@ -73,6 +73,7 @@
                             placeholder="Enter your email"
                             required
                         />
+                        <span id="errorEmailExist"></span>
                     </div>
                     <div class="input-box">
                         <label for="pass">Admin's Password</label>
@@ -83,7 +84,7 @@
                             required
                         />
                     </div>
-
+                    <span id="errorPass"></span>
                     <div class="input-box button">
                         <input type="Submit" value="Add Now" />
                     </div>
@@ -93,5 +94,6 @@
 
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
+        <script src="AddAdmin.js"></script>
     </body>
 </html>

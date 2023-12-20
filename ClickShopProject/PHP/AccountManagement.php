@@ -1,11 +1,24 @@
 <?php
 
-$_POST = json_decode(file_get_contents('php://input'), true);
-
+// $_POST = json_decode(file_get_contents('php://input'), true);
+echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
 if(isset($_POST["functionName"])){
     $_POST["functionName"]();
 }
-
+else {
+    
+    switch ($_POST['RD']) {
+        case 'AB':
+            addBrand();
+            break;
+            case 'AS':
+                addSeller();
+                break;
+        
+    }
+}
 
 
 function login(){
@@ -69,6 +82,52 @@ function signupUser(){
     $conn=null;
 }
 
+function addAdmin(){
+
+    require('Database.php');
+    $sql = "INSERT INTO admin (a_name,a_email,a_phoneNumber,a_password,a_gender)
+    VALUES ('".$_POST["userName"]."','".$_POST["userEmail"]."','".$_POST["userPhone"]."','".$_POST["userPass"]."','".$_POST["userGender"]."');";
+    $result = $conn->query($sql);
+    $conn=null;
+}
+
+function addBrand(){
+
+    require('Database.php');
+
+    $new_img_name=SaveImageOnServer();
+
+
+    $sql = "INSERT INTO brand (b_name,b_profilePic,b_businessDescription)
+    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["desc"]."');";
+    $result = $conn->query($sql);
+    $conn=null;
+    header("Location: ../Admin/adminHome/adminhome.html");
+}
+function addSeller(){
+
+    require('Database.php');
+
+    $new_img_name=SaveImageOnServer();
+
+
+    $sql = "INSERT INTO seller (s_name,s_profilePic,s_businessDescription,s_email,s_password)
+    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["desc"]."','".$_POST["email"]."','".$_POST["pass"]."');";
+    $result = $conn->query($sql);
+    $conn=null;
+    header("Location: ../Admin/adminHome/adminhome.html");
+}
+function SaveImageOnServer(){
+    $img_name = $_FILES['img']['name'];
+    $tmp_name = $_FILES['img']['tmp_name'];
+
+    $img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
+
+    $new_img_name = uniqid("IMG-", true).'.'.$img_extension;
+	$img_upload_path = '../Media/ProductImages/'.$new_img_name;
+    move_uploaded_file($tmp_name, $img_upload_path);
+    return $new_img_name;
+}
 function checkEmail(){
     
     require('Database.php');
