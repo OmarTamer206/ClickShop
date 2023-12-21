@@ -1,24 +1,28 @@
 <?php
 
-// $_POST = json_decode(file_get_contents('php://input'), true);
-echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-if(isset($_POST["functionName"])){
-    $_POST["functionName"]();
-}
-else {
+
+
+ 
     
-    switch ($_POST['RD']) {
-        case 'AB':
-            addBrand();
-            break;
-            case 'AS':
-                addSeller();
+    if(isset($_POST["RD"])){
+        switch ($_POST['RD']) {
+            case 'AB':
+                addBrand();
                 break;
+                case 'AS':
+                    addSeller();
+                    break;
+                    
+                }
+            }
         
-    }
-}
+        else{
+$_POST = json_decode(file_get_contents('php://input'), true);
+
+        if(isset($_POST["functionName"])){
+        $_POST["functionName"]();
+         }
+        }
 
 
 function login(){

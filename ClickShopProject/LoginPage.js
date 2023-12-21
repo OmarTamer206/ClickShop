@@ -147,7 +147,7 @@ loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     let state = await logInUser();
-
+    // console.log(state.state);
     if (state.state === "user") {
         window.location.href = "index.html";
     } else if (state.state === "admin") {
@@ -171,7 +171,7 @@ async function logInUser() {
     try {
         console.log(JSON.stringify(data));
 
-        const response = await fetch("PHP/AccountManagement.php", {
+        let response = await fetch("PHP/AccountManagement.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -181,7 +181,7 @@ async function logInUser() {
         console.log("hi");
         // console.log(response.json());
         console.log("hi");
-
+        // console.log(response.json());
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
