@@ -193,6 +193,42 @@ function getProductsOfSeller(){
     echo json_encode(["products"=>$products ,"sort"=>$num,"dir"=>$direction]);
 }
 
+function getProductSimilarsById(){
+    require('Database.php');
+
+    
+
+       $sql = "SELECT * FROM product p JOIN category c ON p.cat_id = c.cat_id WHERE p.p_id = '".$_POST["productId"]."';";
+
+    
+    $result = $conn->query($sql);
+    $i=0;
+    while($row = $result->fetch()){
+
+        $products[$i++] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"rate"=>$row["p_rating"],"price"=>$row["p_price"]];   
+ 
+    }
+
+    echo json_encode(["products"=>$products ]);
+}
+
+function getProductReviewsById(){
+    require('Database.php');
+
+    
+
+       $sql = "SELECT * FROM rates r JOIN customer c ON r.c_id = c.c_id WHERE r.p_id = '".$_POST["productId"]."';";
+
+    
+    $result = $conn->query($sql);
+    $i=0;
+    while($row = $result->fetch()){
+
+        $products[$i++] = ["name"=>$row["c_name"],"rate"=>$row["r_rating"],"comment"=>$row["r_comment"]];   
+    }
+
+    echo json_encode(["products"=>$products ]);
+}
 
 function getProductDataById(){
     require('Database.php');

@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let productQty = document.querySelector("#qty");
     let productDetails = document.querySelector(".ProductDetails p");
     let productReviews = document.querySelector(".CommentAndRating");
+    let productSwipers = document.querySelector(".swiper-wrapper");
 
     let productData = await getProductDetails();
 
@@ -72,10 +73,149 @@ document.addEventListener("DOMContentLoaded", async () => {
         productStarsContainer.innerHTML += `<img src="../../Media/Stars/emptyStar.png" alt="" />`;
     }
 
+    let Reviews = await getProductReviews();
+
+    for (const comment in Reviews["products"]) {
+        let stars = "";
+
+        for (let i = 0; i < Reviews["products"][comment].rate; i++) {
+            stars += `<img
+            src="../../Media/Stars/filledStar.png"
+            alt=""
+            />
+            `;
+        }
+        for (let i = Reviews["products"][comment].rate; i < 5; i++) {
+            stars += `
+                <img
+                    src="../../Media/Stars/emptyStar.png"
+                    alt=""
+                />
+                `;
+        }
+        productReviews.innerHTML += `
+        <div class="Comment">
+                        <span class="User">${Reviews["products"][comment].name}</span>
+                        
+                        <div class="rating">
+                            <span class="ratesStars">
+                                ${stars}
+                            </span>
+                            
+                        </div>
+                          <p class="Text">${Reviews["products"][comment].comment}</p>
+                          <hr>
+                       </div>
+        `;
+    }
+
+    let similars = await getProductSimilars();
+
+    for (const product in similars["products"]) {
+        let stars = "";
+
+        for (let i = 0; i < Reviews["products"][product].rate; i++) {
+            stars += `<img
+            src="../../Media/Stars/filledStar.png"
+            alt=""
+            />
+            `;
+        }
+        for (let i = Reviews["products"][product].rate; i < 5; i++) {
+            stars += `
+                <img
+                    src="../../Media/Stars/emptyStar.png"
+                    alt=""
+                />
+                `;
+        }
+        productSwipers.innerHTML += `
+        <div class="swiper-slide">
+                    <a href="../ProductPageView/index.html?id=${similars["products"][product].id}">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="../../Media/ProductImages/${similars["products"][product].image}" alt="Product Image" />
+                        </div>
+                        <h3>${similars["products"][product].name}</h3>
+    
+                        <p>${similars["products"][product].price}</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                               ${stars}
+                            </span>
+                            
+                        </div>
+                    </div>
+                </a>
+                </div>
+        `;
+    }
+
     async function getProductDetails() {
         const data = {
             productId: id,
             functionName: "getProductDataById",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+    async function getProductSimilars() {
+        const data = {
+            productId: id,
+            functionName: "getProductSimilarsById",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+    async function getProductReviews() {
+        const data = {
+            productId: id,
+            functionName: "getProductReviewsById",
         };
 
         console.log(data);
