@@ -45,21 +45,20 @@ allStar3.forEach((item, idx) => {
 
 // Backend
 
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+
+let productImage = document.querySelector(".uppersection img");
+let productName = document.querySelector(".middle h2");
+let productPrice = document.querySelector("#price");
+let productStarsContainer = document.querySelector(".ratesStars");
+let productQty = document.querySelector("#qty");
+let productDetails = document.querySelector(".ProductDetails p");
+let productReviews = document.querySelector(".CommentAndRating");
+let productSwipers = document.querySelector(".swiper-wrapper");
+
 document.addEventListener("DOMContentLoaded", async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-
-    let productImage = document.querySelector(".uppersection img");
-    let productName = document.querySelector(".middle h2");
-    let productPrice = document.querySelector("#price");
-    let productStarsContainer = document.querySelector(".ratesStars");
-    let productQty = document.querySelector("#qty");
-    let productDetails = document.querySelector(".ProductDetails p");
-    let productReviews = document.querySelector(".CommentAndRating");
-    let productSwipers = document.querySelector(".swiper-wrapper");
-
     let productData = await getProductDetails();
-
     productImage.src = `../../Media/ProductImages/${productData["products"][0].image}`;
     productName.innerHTML = productData["products"][0].name;
     productPrice.innerHTML = "$" + productData["products"][0].price;
@@ -241,5 +240,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         } catch (error) {
             console.error("Error:", error.message);
         }
+    }
+});
+
+let addToCartBtn = document.querySelector("#addCart");
+
+addToCartBtn.addEventListener("click", async () => {
+    const data = {
+        productId: id,
+        qty: productQty.value,
+        functionName: "addToCart",
+    };
+
+    console.log(data);
+
+    try {
+        console.log(JSON.stringify(data));
+
+        let response = await fetch("../../PHP/ProductsManagement.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        console.log("hi");
+        // console.log(response.json());
+        console.log("hi");
+        // console.log(response.json());
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    } catch (error) {
+        console.error("Error:", error.message);
     }
 });

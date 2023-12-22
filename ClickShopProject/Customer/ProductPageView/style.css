@@ -35,18 +35,18 @@ h2 {
     justify-content: space-around;
 }
 
-.middle form {
+.middle div {
     width: 120%;
     display: flex;
     align-items: center;
 }
 
-.middle form input[type="number"] {
+.middle div input[type="number"] {
     width: 70px;
     text-align: center;
     margin: auto 0px;
 }
-.middle form button {
+.middle div button {
     margin-left: 20px;
     width: 200px;
 }

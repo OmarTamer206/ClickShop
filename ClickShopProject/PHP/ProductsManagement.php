@@ -300,4 +300,25 @@ function EditProduct(){
 }
 
 
+
+
+function addToCart(){
+    require('Database.php');
+    session_start();
+    
+    if(isset($_SESSION["id"])){
+        $sql = "INSERT INTO cart (c_id,p_id,cart_qty) VALUES ('".$_SESSION["id"]."' , '".$_POST["productId"]."' , '".$_POST["qty"]."') ;";
+    
+    
+        $result = $conn->query($sql);
+       
+    }
+
+     
+
+    $conn=null;
+}
+
+
+
 ?>
