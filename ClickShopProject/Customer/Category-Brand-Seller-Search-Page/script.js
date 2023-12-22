@@ -5,6 +5,7 @@ let productsCount = document.querySelector(".elementsFound");
 
 const urlParams = new URLSearchParams(window.location.search);
 const cat = urlParams.get("cat");
+const search = urlParams.get("search");
 
 sortElement.addEventListener("change", async () => {
     makeCards(await getProducts(sortElement, sortDirection));
@@ -39,7 +40,7 @@ function makeCards(data) {
         }
 
         productsContainer.innerHTML += `
-    <a href="../EditProductPage/EditProductPage.html?id=${data["products"][product].id}">
+    <a href="../ProductPageView/index.html?id=${data["products"][product].id}">
     <div class="PSPcard">
         <div class="PSPimgCard">
             <img
@@ -73,29 +74,52 @@ async function getProducts(sort, direction) {
     };
 
     console.log(data);
+    console.log(JSON.stringify(data));
 
-    try {
-        console.log(JSON.stringify(data));
-
-        let response = await fetch(
-            `../../PHP/ProductsManagement.php?fN=GPBC&cat=${cat}&sort=${sort.value}&direction=${direction.value}`,
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+    if (cat != null) {
+        try {
+            let response = await fetch(
+                `../../PHP/ProductsManagement.php?fN=GPBC&cat=${cat}&sort=${sort.value}&direction=${direction.value}`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        );
-        console.log("hi");
-        // console.log(response.json());
-        console.log("hi");
-        // console.log(response.json());
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
         }
-        return response.json();
-    } catch (error) {
-        console.error("Error:", error.message);
+    } else if (search != null) {
+        try {
+            let response = await fetch(
+                `../../PHP/ProductsManagement.php?fN=SP&search=${search}&sort=${sort.value}&direction=${direction.value}`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
     }
 }
 

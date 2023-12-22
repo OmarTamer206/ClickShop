@@ -42,3 +42,64 @@ allStar3.forEach((item, idx) => {
         }
     });
 });
+
+// Backend
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    let productImage = document.querySelector(".uppersection img");
+    let productName = document.querySelector(".middle h2");
+    let productPrice = document.querySelector("#price");
+    let productStarsContainer = document.querySelector(".ratesStars");
+    let productQty = document.querySelector("#qty");
+    let productDetails = document.querySelector(".ProductDetails p");
+    let productReviews = document.querySelector(".CommentAndRating");
+
+    let productData = await getProductDetails();
+
+    productImage.src = `../../Media/ProductImages/${productData["products"][0].image}`;
+    productName.innerHTML = productData["products"][0].name;
+    productPrice.innerHTML = "$" + productData["products"][0].price;
+    productQty.max = productData["products"][0].qty;
+    productDetails.innerHTML = productData["products"][0].desc;
+
+    for (let i = 0; i < productData["products"][0].rate; i++) {
+        productStarsContainer.innerHTML += `<img src="../../Media/Stars/filledStar.png" alt="" />`;
+    }
+    for (let i = productData["products"][0].rate; i < 5; i++) {
+        productStarsContainer.innerHTML += `<img src="../../Media/Stars/emptyStar.png" alt="" />`;
+    }
+
+    async function getProductDetails() {
+        const data = {
+            productId: id,
+            functionName: "getProductDataById",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+});

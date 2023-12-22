@@ -30,10 +30,12 @@
             <form
                 class="search"
                 action="../Category-Brand-Seller-Search-Page/index.html"
+                method="get"
             >
                 <input
                     class="search"
                     type="text"
+                    name="search"
                     placeholder="Search..."
                     required
                 />
@@ -189,16 +191,16 @@
                     <span id="price">EGP $1000</span>
                     <div class="rating">
                         <span class="ratesStars">
-                            <img src="../../Media/Stars/filledStar.png" alt="" />
+                            <!-- <img src="../../Media/Stars/filledStar.png" alt="" />
                             <img src="../../Media/Stars/filledStar.png" alt="" />
                             <img src="../../Media/Stars/filledStar.png" alt="" />
                             <img src="../../Media/Stars/emptyStar.png" alt="" />
-                            <img src="../../Media/Stars/emptyStar.png" alt="" />
+                            <img src="../../Media/Stars/emptyStar.png" alt="" /> -->
                         </span>
-                        <p class="reviewsCount">(review)</p>
+                        
                     </div>
                     <form action="index.html">
-                        <input type="number" min="1" value="1">
+                        <input id="qty" type="number" min="1" value="1">
                         <button type="submit">Add to Cart</button>
                     </form>
                    </div>
@@ -206,7 +208,7 @@
                 
                 <div class="ProductDetails">
                     <h3>Product Details</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eligendi ducimus dolorem accusantium cupiditate excepturi facilis placeat magnam porro, harum quod sed architecto quidem ut quas voluptate voluptatem explicabo eos.</p>
+                    <p id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eligendi ducimus dolorem accusantium cupiditate excepturi facilis placeat magnam porro, harum quod sed architecto quidem ut quas voluptate voluptatem explicabo eos.</p>
                 </div>
                 </div>
                </div>

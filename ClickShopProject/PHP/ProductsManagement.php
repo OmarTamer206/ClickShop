@@ -116,6 +116,44 @@ function GPBC(){  // Get Products BY Criteria (get method)
     echo json_encode(["products"=>$products ,"sort"=>$num,"dir"=>$direction]);
 }
 
+function SP(){ //Search Product
+    require('Database.php');
+    if($_GET["direction"]=="asc"){
+        $direction="ASC";
+    }
+    else{
+        $direction="DESC";
+
+    }
+
+    $products=[];
+    if($_GET["sort"]=="price"){
+        echo json_encode(["1"=>"2"]);
+        $num=1;
+       $sql = "SELECT * FROM product WHERE p_name LIKE '%".$_GET["search"]."%' ORDER BY p_price ".$direction.";";
+    }
+    else if($_GET["sort"]=="ratings"){
+        // echo json_encode(["3"=>"4"]);
+        $num=2;
+        $sql ="SELECT * FROM product WHERE p_name LIKE '%".$_GET["search"]."%' ORDER BY p_rating ".$direction.";";
+    }
+    else if($_GET["sort"]=="date"){
+        // echo json_encode(["5"=>"6"]);
+        $num=3;
+        $sql = "SELECT * FROM product WHERE p_name LIKE '%".$_GET["search"]."%' ORDER BY p_id ".$direction.";";
+    }
+    
+    
+    $result = $conn->query($sql);
+    $i=1;
+    while($row = $result->fetch()){
+
+        $products[$i++] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"rate"=>$row["p_rating"],"price"=>$row["p_price"]];   
+    }
+
+    echo json_encode(["products"=>$products ,"sort"=>$num,"dir"=>$direction]);
+}
+
 function getProductsOfSeller(){
     require('Database.php');
     session_start();
@@ -167,7 +205,7 @@ function getProductDataById(){
     $result = $conn->query($sql);
     if($row = $result->fetch()){
 
-        $products[0] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"brand"=>$row["b_id"],"category"=>$row["cat_id"],"qty"=>$row["p_qty"],"price"=>$row["p_price"],"desc"=>$row["p_description"]];   
+        $products[0] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"brand"=>$row["b_id"],"category"=>$row["cat_id"],"qty"=>$row["p_qty"],"price"=>$row["p_price"],"desc"=>$row["p_description"],"rate"=>$row["p_rating"]];   
     }
 
     echo json_encode(["products"=>$products ]);
