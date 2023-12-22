@@ -132,7 +132,7 @@ function addSeller(){
     VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["desc"]."','".$_POST["email"]."','".$_POST["pass"]."');";
     $result = $conn->query($sql);
     $conn=null;
-    // header("Location: ../Admin/adminHome/adminhome.html");
+    header("Location: ../Admin/adminHome/adminhome.html");
 }
 function SaveImageOnServer(){
     

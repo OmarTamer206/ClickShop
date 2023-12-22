@@ -197,3 +197,8 @@ form .text h3 a:hover {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
+
+#brandError,
+#catError {
+    color: red;
+}

@@ -44,11 +44,16 @@
                         <div class="sorting">
                             <label for="sortSelect">Sort by:</label>
                             <select id="sortSelect" name="sortSelect">
-                                <option value="price">Price</option>
-                                <option value="releaseDate">
-                                    Release Date
+                                <option value="ratings" selected>
+                                    Ratings
                                 </option>
-                                <option value="ratings">Ratings</option>
+                                <option value="price">Price</option>
+                                <option value="date">Release Date</option>
+                            </select>
+                            <label for="sortdir">Direction:</label>
+                            <select id="sortdir" name="sortdir">
+                                <option value="des" selected>Up To Down</option>
+                                <option value="asc">Down To Up</option>
                             </select>
                         </div>
                     </div>
@@ -215,7 +220,7 @@
                 </div>
             </div>
         </main>
-
+        <script src="script.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
     </body>

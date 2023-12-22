@@ -37,9 +37,13 @@
         <div class="centerDiv">
             <div class="wrapper">
                 <h2>Add New Product</h2>
-                <form action="../../PHP/ProductsManagement.php
-                enctype="multipart/form-data"
-                ">
+                <form
+                    action="../../PHP/ProductsManagement.php"
+                    enctype="multipart/form-data"
+                    method="post"
+                    id="AddProduct"
+                >
+                    <input type="hidden" name="RD" value="SAP" />
                     <div class="input-box">
                         <label for="name">Product's Name</label>
                         <input
@@ -75,20 +79,32 @@
 
                     <div class="input-box">
                         <label for="brand">Product's Brand</label>
-                        <select id="brand" name="brand" aria-label="Default select example">
-                            <option>Addias</option>
-                            <option>Nike</option>
-                            <option>Other</option>
+                        <select
+                            id="brand"
+                            name="brand"
+                            aria-label="Default select example"
+                            required
+                        >
+                            <option hidden selected value="">
+                                Choose Brand
+                            </option>
                         </select>
+                        <span #brandError></span>
                     </div>
 
                     <div class="input-box">
                         <label for="cat">Product's Category</label>
-                        <select id="cat" name="category" aria-label="Default select example">
-                            <option>Clothes</option>
-                            <option>food</option>
-                            <option>Other</option>
+                        <select
+                            id="cat"
+                            name="category"
+                            aria-label="Default select example"
+                            required
+                        >
+                            <option hidden selected value="">
+                                Choose Category
+                            </option>
                         </select>
+                        <span #catError></span>
                     </div>
 
                     <div class="input-box">
@@ -118,6 +134,7 @@
                 </form>
             </div>
         </div>
+        <script src="AddProduct.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
     </body>
