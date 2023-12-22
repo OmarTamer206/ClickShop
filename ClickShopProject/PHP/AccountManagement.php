@@ -109,8 +109,8 @@ function addBrand(){
     move_uploaded_file($tmp_name, $img_upload_path);
 
 
-    $sql = "INSERT INTO brand (b_name,b_profilePic,b_businessDescription)
-    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["desc"]."');";
+    $sql = "INSERT INTO brand (b_name,b_profilePic)
+    VALUES ('".$_POST["name"]."','".$new_img_name."');";
     $result = $conn->query($sql);
     $conn=null;
     header("Location: ../Admin/adminHome/adminhome.html");
@@ -128,8 +128,8 @@ function addSeller(){
 	$img_upload_path = '../Media/Sellers/'.$new_img_name;
     move_uploaded_file($tmp_name, $img_upload_path);
 
-    $sql = "INSERT INTO seller (s_name,s_profilePic,s_businessDescription,s_email,s_password)
-    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["desc"]."','".$_POST["email"]."','".$_POST["pass"]."');";
+    $sql = "INSERT INTO seller (s_name,s_profilePic,s_email,s_password)
+    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["email"]."','".$_POST["pass"]."');";
     $result = $conn->query($sql);
     $conn=null;
     header("Location: ../Admin/adminHome/adminhome.html");

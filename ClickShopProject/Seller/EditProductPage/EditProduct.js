@@ -12,6 +12,7 @@ let productBrand = document.querySelector("#brand");
 let productCategory = document.querySelector("#cat");
 let productQty = document.querySelector("#qty");
 let productDesc = document.querySelector("#desc");
+let deleteBtn = document.querySelector("#deleteBtn");
 
 function editForm(data) {
     // console.log(data["products"][4].image);

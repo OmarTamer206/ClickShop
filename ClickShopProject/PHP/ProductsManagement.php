@@ -1,4 +1,5 @@
 <?php
+        
 
 
 if(isset($_POST["RD"])){
@@ -15,10 +16,15 @@ if(isset($_POST["RD"])){
     
     else{
 $_POST = json_decode(file_get_contents('php://input'), true);
+    
 
     if(isset($_POST["functionName"])){
     $_POST["functionName"]();
      }
+     else if(isset($_GET["fN"])){
+        // echo json_encode(["one"=>"two"]);
+        $_GET["fN"]();
+         }
     }
 
 
@@ -72,6 +78,43 @@ function getBrandsAndCategories(){
     echo  json_encode(['categories' => $categories,'brands' => $brands]);
 }
 
+function GPBC(){  // Get Products BY Criteria (get method)
+    require('Database.php');
+    if($_GET["direction"]=="asc"){
+        $direction="ASC";
+    }
+    else{
+        $direction="DESC";
+
+    }
+
+    $products=[];
+    if($_GET["sort"]=="price"){
+        // echo json_encode(["1"=>"2"]);
+        $num=1;
+       $sql = "SELECT * FROM product p JOIN category c ON p.cat_id=c.cat_id WHERE c.cat_name ='".$_GET["cat"]."' ORDER BY p_price ".$direction.";";
+    }
+    else if($_GET["sort"]=="ratings"){
+        // echo json_encode(["3"=>"4"]);
+        $num=2;
+        $sql ="SELECT * FROM product p JOIN category c ON p.cat_id=c.cat_id WHERE c.cat_name ='".$_GET["cat"]."' ORDER BY p_rating ".$direction.";";
+    }
+    else if($_GET["sort"]=="date"){
+        // echo json_encode(["5"=>"6"]);
+        $num=3;
+        $sql = "SELECT * FROM product p JOIN category c ON p.cat_id=c.cat_id WHERE c.cat_name ='".$_GET["cat"]."' ORDER BY p_id ".$direction.";";
+    }
+    
+    
+    $result = $conn->query($sql);
+    $i=1;
+    while($row = $result->fetch()){
+
+        $products[$i++] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"rate"=>$row["p_rating"],"price"=>$row["p_price"]];   
+    }
+
+    echo json_encode(["products"=>$products ,"sort"=>$num,"dir"=>$direction]);
+}
 
 function getProductsOfSeller(){
     require('Database.php');
@@ -133,7 +176,21 @@ function getProductDataById(){
 function EditProduct(){
     require('Database.php');
 
-    echo json_encode([$_FILES]);
+    if(isset($_POST["delete"])){
+        unlink("../Media/ProductImages/".basename($_POST["old_img_path"]));
+        $sql = "DELETE FROM rates  WHERE p_id = '".$_POST["id"]."' ";
+        $result = $conn->query($sql);
+        $sql = "DELETE FROM cart  WHERE p_id = '".$_POST["id"]."' ";
+        $result = $conn->query($sql);
+        $sql = "DELETE FROM orderedproducts  WHERE p_id = '".$_POST["id"]."' ";
+        $result = $conn->query($sql);
+        $sql = "DELETE FROM product  WHERE p_id = '".$_POST["id"]."' ";
+        $result = $conn->query($sql);
+    
+        $row = $result->fetch();
+    }
+    else{
+        echo json_encode([$_FILES]);
     echo json_encode(["done"=>var_dump(isset($Files["img"]))]);
     // echo json_encode(["d"=>var_dump($_POST["img"]=="")]);
 
@@ -161,6 +218,7 @@ function EditProduct(){
     $result = $conn->query($sql);
     
     $row = $result->fetch();
+    }
 
     $conn=null;
 

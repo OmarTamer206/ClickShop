@@ -210,3 +210,7 @@ form .text h3 a:hover {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
+
+#deleteBtn:hover {
+    background-color: rgb(250, 103, 103);
+}
