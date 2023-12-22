@@ -52,7 +52,7 @@ function makeCards(data) {
             <span class="PSPratesStars">
                 ${stars}
             </span>
-            <p class="PSPreviewsCount">(review)</p>
+            <p class="PSPreviewsCount"></p>
         </div>
     </div>
     </a>

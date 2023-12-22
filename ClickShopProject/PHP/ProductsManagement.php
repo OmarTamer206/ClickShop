@@ -6,8 +6,8 @@ if(isset($_POST["RD"])){
         case 'SAP':
             addProduct();
             break;
-            case 'AS':
-                addSeller();
+            case 'EP':
+                EditProduct();
                 break;
                 
             }
@@ -111,5 +111,61 @@ function getProductsOfSeller(){
 
     echo json_encode(["products"=>$products ,"sort"=>$num,"dir"=>$direction]);
 }
+
+
+function getProductDataById(){
+    require('Database.php');
+    session_start();
+    
+
+       $sql = "SELECT * FROM product WHERE p_id = '".$_POST["productId"]."';";
+    
+    
+    $result = $conn->query($sql);
+    if($row = $result->fetch()){
+
+        $products[0] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"brand"=>$row["b_id"],"category"=>$row["cat_id"],"qty"=>$row["p_qty"],"price"=>$row["p_price"],"desc"=>$row["p_description"]];   
+    }
+
+    echo json_encode(["products"=>$products ]);
+}
+
+function EditProduct(){
+    require('Database.php');
+
+    echo json_encode([$_FILES]);
+    echo json_encode(["done"=>var_dump(isset($Files["img"]))]);
+    // echo json_encode(["d"=>var_dump($_POST["img"]=="")]);
+
+    if(isset($_FILES['img']) && $_FILES['img']['name']!=""){
+
+        $img_name = $_FILES['img']['name'];
+        $tmp_name = $_FILES['img']['tmp_name'];
+        
+        $img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
+    
+        $new_img_name = uniqid("IMG-", true).'.'.$img_extension;
+        $img_upload_path = '../Media/ProductImages/'.$new_img_name;
+        move_uploaded_file($tmp_name, $img_upload_path);
+        unlink("../Media/ProductImages/".basename($_POST["old_img_path"]));
+        $imageUpdate = "p_image='".$new_img_name."' ,";
+        echo json_encode(["done"=>"true"]);
+    }
+    else {
+        $imageUpdate=" ";
+        echo json_encode(["done"=>"false"]);
+
+    }
+
+    $sql = "UPDATE product SET ".$imageUpdate." p_name='".$_POST["name"]."' , p_price='".$_POST["price"]."' , p_description = '".$_POST["desc"]."' , p_qty='".$_POST["qty"]."' , b_id='".$_POST["brand"]."' , cat_id='".$_POST["category"]."'  WHERE p_id = '".$_POST["id"]."' ";
+    $result = $conn->query($sql);
+    
+    $row = $result->fetch();
+
+    $conn=null;
+
+    header("Location: ../Seller/ManageProductsSeller/index.html");
+}
+
 
 ?>

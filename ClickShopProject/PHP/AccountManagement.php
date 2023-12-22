@@ -105,7 +105,7 @@ function addBrand(){
     $img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
 
     $new_img_name = uniqid("IMG-", true).'.'.$img_extension;
-	$img_upload_path = '../Media/ProductImages/'.$new_img_name;
+	$img_upload_path = '../Media/Brands/'.$new_img_name;
     move_uploaded_file($tmp_name, $img_upload_path);
 
 
@@ -125,7 +125,7 @@ function addSeller(){
     $img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
 
     $new_img_name = uniqid("IMG-", true).'.'.$img_extension;
-	$img_upload_path = '../Media/ProductImages/'.$new_img_name;
+	$img_upload_path = '../Media/Sellers/'.$new_img_name;
     move_uploaded_file($tmp_name, $img_upload_path);
 
     $sql = "INSERT INTO seller (s_name,s_profilePic,s_businessDescription,s_email,s_password)
@@ -134,10 +134,7 @@ function addSeller(){
     $conn=null;
     header("Location: ../Admin/adminHome/adminhome.html");
 }
-function SaveImageOnServer(){
-    
-    // return $new_img_name;
-}
+
 function checkEmail(){
     
     require('Database.php');

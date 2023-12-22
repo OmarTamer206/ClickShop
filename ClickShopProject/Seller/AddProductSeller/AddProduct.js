@@ -3,6 +3,7 @@ let pCategories = document.querySelector("#cat");
 let addProductForm = document.querySelector("#AddProduct");
 let bError = document.querySelector("#brandError");
 let cError = document.querySelector("#catError");
+
 document.addEventListener("DOMContentLoaded", async () => {
     let getBrandsAndCategories = await getDataOfBrandsAndCategories();
     let brands = getBrandsAndCategories.brands;
