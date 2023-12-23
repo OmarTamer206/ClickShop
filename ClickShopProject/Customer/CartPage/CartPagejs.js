@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function loadAddress() {
         let addresses = await getAddresses();
-
+        savedAddresses.innerHTML = "";
         for (const address in addresses["address"]) {
             savedAddresses.innerHTML += `
             <option value = ${address}>City:${addresses["address"][address].city} ,Street: ${addresses["address"][address].street} ,Building: ${addresses["address"][address].building} ,Floor: ${addresses["address"][address].floor} ,Apartment No.${addresses["address"][address].apartment} </option>
@@ -340,6 +340,51 @@ document.addEventListener("DOMContentLoaded", async () => {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    let checkoutBtn = document.querySelector("#Checkout");
+
+    checkoutBtn.addEventListener("click", async () => {
+        await makeOrder(
+            savedAddresses.value,
+            grand_total.innerHTML,
+            await getCart()
+        );
+
+        window.location.href = "../DetailOrderPage/index.html";
+    });
+
+    async function makeOrder(address, total, products) {
+        const data = {
+            address: address,
+            total: total,
+            products: products,
+            functionName: "makeOrder",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // return response.json();
         } catch (error) {
             console.error("Error:", error.message);
         }

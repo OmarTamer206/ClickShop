@@ -390,4 +390,26 @@ function addAddress(){
    
         
 }
+
+function makeOrder(){
+    require('Database.php');
+    session_start();
+    
+    $products = $_POST["products"]["products"];
+    // echo json_encode($_POST["products"]["products"][2]["id"]);
+
+    $sql = "INSERT INTO orders (c_id,o_date,ba_id,o_totalPrice) VALUES ('".$_SESSION["id"]."','NOW()','".$_POST["address"]."','".$_POST["total"]."')";
+     $result = $conn->query($sql);
+     $newRecordId= $conn->lastInsertId();
+
+     for ($i=0; $i < count($products) ; $i++) { 
+        
+        $sql = "INSERT INTO orderedproducts (o_id,p_id,op_qty) VALUES ('".$newRecordId."','".$products[$i]["id"]."','".$products[$i]["qty"]."')";
+        $result = $conn->query($sql);
+
+     }
+
+        
+}
+
 ?>
