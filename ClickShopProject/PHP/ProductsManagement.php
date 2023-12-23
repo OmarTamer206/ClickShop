@@ -320,5 +320,44 @@ function addToCart(){
 }
 
 
+function getCart(){
+    require('Database.php');
+    session_start();
+    
+
+        $sql = "SELECT * FROM cart WHERE c_id = '".$_SESSION["id"]."';";
+        $result = $conn->query($sql);
+    $i=0;
+    while($row = $result->fetch()){
+        $sql_2 = "SELECT * FROM product WHERE p_id = '".$row["p_id"]."';";
+        $result_2 = $conn->query($sql_2);
+        $row_2 = $result_2->fetch();
+        $products[$i++] = ["id"=>$row["p_id"],"qty"=>$row["cart_qty"],"price"=>$row_2["p_price"],"image"=>$row_2["p_image"],"name"=>$row_2["p_name"]];   
+    }
+
+    echo json_encode(["products"=>$products ]);
+}
+function updateCartQty(){
+    require('Database.php');
+    session_start();
+    
+
+    $sql = "UPDATE cart SET  cart_qty='".$_POST["qty"]."' WHERE  c_id = '".$_SESSION["id"]."' AND p_id ='".$_POST["productId"]."' ";
+
+        $result = $conn->query($sql);
+   
+    echo json_encode(["state"=>"success" ]);
+}
+function deleteFromCart(){
+    require('Database.php');
+    session_start();
+    
+
+    $sql = "DELETE FROM cart  WHERE   c_id = '".$_SESSION["id"]."' AND p_id ='".$_POST["productId"]."' ";
+
+        $result = $conn->query($sql);
+   
+    echo json_encode(["state"=>"success" ]);
+}
 
 ?>
