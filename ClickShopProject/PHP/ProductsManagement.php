@@ -360,4 +360,34 @@ function deleteFromCart(){
     echo json_encode(["state"=>"success" ]);
 }
 
+function getAddresses(){
+    require('Database.php');
+    session_start();
+    
+
+    $sql = "SELECT * FROM billingaddress WHERE c_id = '".$_SESSION["id"]."';";
+
+
+        $result = $conn->query($sql);
+        $address=[];
+        $i=0;
+        while($row = $result->fetch()){
+           
+            $address[$row["ba_id"]] = ["city"=>$row["ba_city"],"street"=>$row["ba_street"],"building"=>$row["ba_buildingNumber"],"floor"=>$row["ba_floor"],"apartment"=>$row["ba_apartmentNumber"]];   
+        }
+
+    echo json_encode(["address"=>$address ]);
+}
+function addAddress(){
+    require('Database.php');
+    session_start();
+    
+
+    $sql = "INSERT INTO billingaddress (c_id,ba_city,ba_street,ba_buildingNumber,ba_floor,ba_apartmentNumber) VALUES ('".$_SESSION["id"]."','".$_POST["city"]."','".$_POST["street"]."','".$_POST["building"]."','".$_POST["floor"]."','".$_POST["apartment"]."')";
+
+
+        $result = $conn->query($sql);
+   
+        
+}
 ?>

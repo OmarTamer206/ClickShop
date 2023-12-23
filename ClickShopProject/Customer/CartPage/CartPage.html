@@ -213,11 +213,8 @@
                                                     <div class="modal-body">
                                                         <div class="dropdown">
                                                             
-                                                            <select class="form-select" aria-label="Default select example">
-                                                                <option>Address 1</option>
-                                                                <option>Address 2</option>
-                                                                <option>Address 3</option>
-                                                                <option>Address 4</option>
+                                                            <select id="availableAddresses" class="form-select" aria-label="Default select example">
+                                                                
                                                             </select>
                                                           </div><br/><br/>
                                                              
@@ -225,14 +222,14 @@
                                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                                                                   Add New Address
                                                                 </button>
-                                                                <form class="dropdown-menu p-4">
+                                                                <div class="dropdown-menu p-4">
                                                                   <div class="mb-3">
                                                                     <label for="newAddress">Add a New Address:</label><br/>
                                                                     <label for="exampleDropdownFormEmail2" class="form-label">City</label>
                                                                     <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                                         Select Address
                                                                       </button> -->
-                                                                    <select class="form-select" aria-label="Default select example">
+                                                                    <select id="chooseCity" class="form-select" aria-label="Default select example">
                                                                         <option>Cairo</option>
                                                                         <option>Giza</option>
                                                                         <option>Alex</option>
@@ -241,32 +238,32 @@
                                                                   </div>
                                                                   <div class="mb-3">
                                                                     <label for="exampleDropdownFormPassword2" class="form-label">Street</label>
-                                                                    <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Street name">
+                                                                    <input id="street" type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Street name">
                                                                   </div>
 
                                                                   <div class="mb-3">
                                                                     <label for="exampleDropdownFormPassword2" class="form-label">Building No.</label>
-                                                                    <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Building Number">
+                                                                    <input id="building" type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Building Number">
                                                                   </div>
 
                                                                   <div class="mb-3">
                                                                     <label for="exampleDropdownFormPassword2" class="form-label">Floor</label>
-                                                                    <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Floor no">
+                                                                    <input id="floor" type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Floor no">
                                                                   </div>
 
                                                                   <div class="mb-3">
                                                                     <label for="exampleDropdownFormPassword2" class="form-label">Apartment Number</label>
-                                                                    <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Apartment no">
+                                                                    <input id="apartment" type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="Apartment no">
                                                                   </div>
-                                                                    <button class="btn btn-primary" onclick="addNewAddress()">Add Address</button>
-                                                                </form>
+                                                                    <button id="addAddress" class="btn btn-primary" >Add Address</button>
+                                                                </div>
                                                               </div>
                                                                       
                                                             </div>
 
                                                         <div class="modal-footer">
                                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                         <button type="button" class="btn btn-primary">Save changes</button>
+                                                         <button id="selectAddress" type="button" class="btn btn-primary">Select Address</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -277,7 +274,7 @@
                                             <tbody>
                                                  <tr>
                                                      <th>Subtotal</th>
-                                                     <td>$1779.94</td>
+                                                     <td >$<span id="subtotal-total">0</span></td>
                                                  </tr>
                                                 
                                                 <tr>
@@ -286,12 +283,12 @@
                                                 </tr>
                                                 <tr>
                                                    <th>Shipping</th>
-                                                    <td>$10.00</td>
+                                                    <td >$<span id="shippingFees">0</span></td>
                                                 </tr>
                                                 
                                                 <tr class="grand-total">
                                                   <th>TOTAL</th>
-                                                  <td><strong>$1689.94</strong></td>
+                                                  <td ><strong>$<span id="final-grand-total">0</span></strong></td>
                                                 </tr>
                                             </tbody>
                                          </table>
