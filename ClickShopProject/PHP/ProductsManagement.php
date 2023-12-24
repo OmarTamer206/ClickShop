@@ -332,7 +332,7 @@ function getCart(){
         $sql_2 = "SELECT * FROM product WHERE p_id = '".$row["p_id"]."';";
         $result_2 = $conn->query($sql_2);
         $row_2 = $result_2->fetch();
-        $products[$i++] = ["id"=>$row["p_id"],"qty"=>$row["cart_qty"],"price"=>$row_2["p_price"],"image"=>$row_2["p_image"],"name"=>$row_2["p_name"]];   
+        $products[$i++] = ["id"=>$row["p_id"],"qty"=>$row["cart_qty"],"price"=>$row_2["p_price"],"image"=>$row_2["p_image"],"name"=>$row_2["p_name"],"max_qty"=>$row_2["p_qty"]];   
     }
 
     echo json_encode(["products"=>$products ]);
@@ -394,22 +394,53 @@ function addAddress(){
 function makeOrder(){
     require('Database.php');
     session_start();
+    // echo json_encode(["id"=>"2"]);
     
+    
+
     $products = $_POST["products"]["products"];
     // echo json_encode($_POST["products"]["products"][2]["id"]);
 
-    $sql = "INSERT INTO orders (c_id,o_date,ba_id,o_totalPrice) VALUES ('".$_SESSION["id"]."','NOW()','".$_POST["address"]."','".$_POST["total"]."')";
+    $currentDateTime = new DateTime();
+$formattedDateTime = $currentDateTime->format('Y-m-d H:i:s');
+
+    $sql = "INSERT INTO orders (c_id,o_date,ba_id,o_totalPrice) VALUES ('".$_SESSION["id"]."','".$formattedDateTime."','".$_POST["address"]."','".$_POST["total"]."')";
      $result = $conn->query($sql);
      $newRecordId= $conn->lastInsertId();
+    
+     $sql = "DELETE FROM cart  WHERE   c_id = '".$_SESSION["id"]."'  ";
+
+        $result = $conn->query($sql);
+
+
 
      for ($i=0; $i < count($products) ; $i++) { 
+        // echo json_encode(["test"=>$newRecordId]);
         
         $sql = "INSERT INTO orderedproducts (o_id,p_id,op_qty) VALUES ('".$newRecordId."','".$products[$i]["id"]."','".$products[$i]["qty"]."')";
         $result = $conn->query($sql);
 
+        $sql = "UPDATE product SET p_qty = '".($products[$i]["max_qty"]-$products[$i]["qty"])."' WHERE  p_id = '".$products[$i]["id"]."'";
+        $result = $conn->query($sql);
+
      }
 
-        
+        echo json_encode(["id"=>$newRecordId]);
+        exit;
+}
+
+function clearCart($conn){
+    // require('Database.php');
+    
+    
+
+    $sql = "DELETE FROM cart  WHERE   c_id = '".$_SESSION["id"]."'  ";
+
+        $result = $conn->query($sql);
+
+        // echo json_encode(["id"=>"1"]);
+
+   
 }
 
 ?>

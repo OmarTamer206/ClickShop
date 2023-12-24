@@ -240,3 +240,7 @@ body {
 .deletebtn {
     cursor: pointer;
 }
+
+.quantitycontrol input[type="number"] {
+    width: 100px;
+}

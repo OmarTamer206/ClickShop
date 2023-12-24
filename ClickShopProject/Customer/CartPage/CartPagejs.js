@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         <td>
             <div class="quantitycontrol">
                 <button id="M${product}" class="minus">-</button>
-                <input id="qty${product}" type="number" min="1" value="${
-            productsInCart["products"][product].qty
-        }" />
+                <input id="qty${product}" type="number" min="1" max="${
+            productsInCart["products"][product].max_qty
+        }" value="${productsInCart["products"][product].qty}" />
                 <button id="P${product}" class="plus">+</button>
             </div>
         </td>
@@ -84,31 +84,41 @@ document.addEventListener("DOMContentLoaded", async () => {
         product
     ) {
         minus.addEventListener("click", () => {
-            qty.value--;
-            subtotal.innerHTML =
-                productsInCart["products"][product].price * qty.value;
-            updateCartQty(productsInCart["products"][product].id, qty.value);
+            if (qty.value != 1) {
+                qty.value--;
+                subtotal.innerHTML =
+                    productsInCart["products"][product].price * qty.value;
+                updateCartQty(
+                    productsInCart["products"][product].id,
+                    qty.value
+                );
 
-            final_subtotal.innerHTML =
-                +final_subtotal.innerHTML -
-                +productsInCart["products"][product].price;
+                final_subtotal.innerHTML =
+                    +final_subtotal.innerHTML -
+                    +productsInCart["products"][product].price;
 
-            grand_total.innerHTML =
-                +final_subtotal.innerHTML + +shippingFees.innerHTML;
+                grand_total.innerHTML =
+                    +final_subtotal.innerHTML + +shippingFees.innerHTML;
+            }
         });
         plus.addEventListener("click", () => {
-            console.log(product);
-            qty.value++;
-            subtotal.innerHTML =
-                productsInCart["products"][product].price * qty.value;
-            updateCartQty(productsInCart["products"][product].id, qty.value);
+            if (qty.value < productsInCart["products"][product].max_qty) {
+                console.log(product);
+                qty.value++;
+                subtotal.innerHTML =
+                    productsInCart["products"][product].price * qty.value;
+                updateCartQty(
+                    productsInCart["products"][product].id,
+                    qty.value
+                );
 
-            final_subtotal.innerHTML =
-                +final_subtotal.innerHTML +
-                +productsInCart["products"][product].price;
+                final_subtotal.innerHTML =
+                    +final_subtotal.innerHTML +
+                    +productsInCart["products"][product].price;
 
-            grand_total.innerHTML =
-                +final_subtotal.innerHTML + +shippingFees.innerHTML;
+                grand_total.innerHTML =
+                    +final_subtotal.innerHTML + +shippingFees.innerHTML;
+            }
         });
         deleteBtn.addEventListener("click", () => {
             final_subtotal.innerHTML =
@@ -348,13 +358,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     let checkoutBtn = document.querySelector("#Checkout");
 
     checkoutBtn.addEventListener("click", async () => {
-        await makeOrder(
+        let orderId = await makeOrder(
             savedAddresses.value,
             grand_total.innerHTML,
             await getCart()
         );
-
-        window.location.href = "../DetailOrderPage/index.html";
+        console.log(await orderId);
+        window.location.href = `../DetailOrderPage/index.html?id=${await orderId.id}`;
     });
 
     async function makeOrder(address, total, products) {
@@ -384,7 +394,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            // return response.json();
+            return response.json();
         } catch (error) {
             console.error("Error:", error.message);
         }
