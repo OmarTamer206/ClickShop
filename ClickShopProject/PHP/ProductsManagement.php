@@ -456,4 +456,25 @@ function getOrderDetails(){
 
 }
 
+function getOrders(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM orders WHERE c_id = '".$_SESSION["id"]."';";
+    
+    $result = $conn->query($sql);
+    
+    
+    
+    $orders = [];
+
+    while($row = $result->fetch()){
+        $orders[$row["o_id"]] = ["date"=>$row["o_date"],"price"=>$row["o_totalPrice"]];   
+    } 
+    // kamel al data mn al products
+   
+    echo json_encode(["orders"=>$orders]);
+
+}
+
 ?>
