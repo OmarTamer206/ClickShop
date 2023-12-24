@@ -180,105 +180,38 @@
 
         <h1>Detail Order Page</h1>
 
+        <div class="order">
+            <span class="info">Order ID: <span class="OID">1</span></span>
+        </div>
+        <div class="order">
+            <span class="info"
+                >Order Date: <span class="ODate">30/9/2023</span></span
+            >
+        </div>
         <table class="AllOrders">
-            <tr>
-                <div class="order">
-                    <span class="info"
-                        >Order ID: <span class="OID">1</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <span class="info"
-                        >Order Date: <span class="ODate">30/9/2023</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <img
-                        class="imgCard"
-                        src="../../Media/ProductImages/image.jpg"
-                        alt="Product Image"
-                    />
-                    <span class="info"
-                        >Name: <span class="OName">Bottle</span></span
-                    >
-                    <span class="info"
-                        >Quantity: <span class="OQuantity">2</span></span
-                    >
-                    <span class="info"
-                        >Price: <span class="OPrice">1000</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <img
-                        class="imgCard"
-                        src="../../Media/ProductImages/image.jpg"
-                        alt="Product Image"
-                    />
-                    <span class="info"
-                        >Name: <span class="OName">Bottle</span></span
-                    >
-                    <span class="info"
-                        >Quantity: <span class="OQuantity">2</span></span
-                    >
-                    <span class="info"
-                        >Price: <span class="OPrice">1000</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <span class="info"
-                        >Sub Total: <span class="OSubtotal">1000</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <span class="info"
-                        >Delivery Fee:
-                        <span class="ODeliveryFee">50</span></span
-                    >
-                </div>
-            </tr>
-
-            <tr>
-                <div class="order">
-                    <span class="info"
-                        >Total: <span class="OTotal">1050</span></span
-                    >
-                </div>
-            </tr>
+            <tbody>
+                <tr class="productsOrder">
+                    <!-- <div class="order">
+                        <img
+                            class="imgCard"
+                            src="../../Media/ProductImages/image.jpg"
+                            alt="Product Image"
+                        />
+                        <span class="info"
+                            >Name: <span class="OName">Bottle</span></span
+                        >
+                        <span class="info"
+                            >Quantity: <span class="OQuantity">2</span></span
+                        >
+                        <span class="info"
+                            >Price: <span class="OPrice">1000</span></span
+                        >
+                    </div> -->
+                </tr>
+            </tbody>
         </table>
-
-        <div class="rateDiv">
-            <div class="RatingSts">
-                <form action="index.html">
-                    <div class="rateSection">
-                        <span class="info">Please Rate Your Order : </span>
-                        <div class="Rating1">
-                            <input type="number" name="rating" hidden />
-                            <i class="bx bx-star star"></i>
-                            <i class="bx bx-star star"></i>
-                            <i class="bx bx-star star"></i>
-                            <i class="bx bx-star star"></i>
-                            <i class="bx bx-star star"></i>
-                        </div>
-                    </div>
-
-                    <input type="submit" value="Rate" />
-                </form>
-            </div>
+        <div class="order">
+            <span class="info">Total: <span class="OTotal">1050</span></span>
         </div>
 
         <footer class="footer">
@@ -324,8 +257,8 @@
                 </div>
             </div>
         </footer>
-        <script src="script.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js"></script>
         <script src="../../Bootstrap_Library/js/bootstrap.bundle.min.js.map"></script>
+        <script src="script.js"></script>
     </body>
 </html>

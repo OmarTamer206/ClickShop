@@ -429,18 +429,31 @@ $formattedDateTime = $currentDateTime->format('Y-m-d H:i:s');
         exit;
 }
 
-function clearCart($conn){
-    // require('Database.php');
+function getOrderDetails(){
+    require('Database.php');
     
     
+    $sql = "SELECT * FROM orders WHERE o_id = '".$_POST["id"]."';";
+    
+    $result = $conn->query($sql);
+    $row = $result->fetch();
 
-    $sql = "DELETE FROM cart  WHERE   c_id = '".$_SESSION["id"]."'  ";
+    $sql_2 = "SELECT * FROM orderedproducts WHERE o_id = '".$_POST["id"]."';";
+    
+    $result_2 = $conn->query($sql_2);
+    
+    $orderedItems = [];
 
-        $result = $conn->query($sql);
-
-        // echo json_encode(["id"=>"1"]);
-
+    while($row_2 = $result_2->fetch()){
+        $sql_3 = "SELECT * FROM product WHERE p_id = '".$row_2["p_id"]."';";
+        $result_3 = $conn->query($sql_3);
+        $row_3 = $result_3->fetch();
+        $orderedItems[$row_2["p_id"]] = ["name"=>$row_3["p_name"],"image"=>$row_3["p_image"],"qty"=>$row_2["op_qty"],"price"=>$row_3["p_price"]];   
+    } 
+    // kamel al data mn al products
    
+    echo json_encode(["orderTotal"=>$row["o_totalPrice"],"orderDate"=>$row["o_date"],"products"=>$orderedItems]);
+
 }
 
 ?>
