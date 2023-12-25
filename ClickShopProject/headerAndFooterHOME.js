@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     } else {
         header.innerHTML = `
-        <a href="../../index.html"
+        <a href="index.html"
                 ><img
                     src="Media/Logo/PhotoRoom-20230131_144635.png"
                     alt=""
