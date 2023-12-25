@@ -1,5 +1,8 @@
 <?php
         
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\Exception;
+
 
 
 if(isset($_POST["RD"])){
@@ -555,5 +558,114 @@ function checkReview(){
     }
     echo json_encode(["state"=>$state]);
 }
+
+function getFeedbacks (){
+
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM feedback;";
+    
+    $result = $conn->query($sql);
+    
+    
+    
+    $feedbacks = [];
+
+    while($row = $result->fetch()){
+        $feedbacks[$row["f_id"]] = ["date"=>$row["f_date"],"message"=>$row["f_message"],"email"=>$row["f_email"]];   
+    } 
+   
+    echo json_encode(["feedbacks"=>$feedbacks]);
+
+
+}
+
+function sendFeedbackReply(){
+    require('Database.php');
+
+    require 'phpmailer/src/Exception.php';
+    require 'phpmailer/src/PHPMailer.php';
+    require 'phpmailer/src/SMTP.php';
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = "coursesoverflow2023@gmail.com"; //gmail
+    $mail->Password = "rcimgxvdideooazv"; //gmail app password
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+
+    $mail->setFrom('clickshop@gmail.com'); //gmail
+
+    $mail->addAddress("coursesoverflow2023@gmail.com"); //to who
+
+    $mail->isHTML(true);
+
+    $mail->Subject = "Response on Your Feedback";
+    $mail->Body = $_POST["reply"];
+
+    $mail->send();
+
+    $sql = "DELETE FROM feedback  WHERE   f_id = '".$_POST["id"]."'  ";
+    $result = $conn->query($sql);
+    
+}
+
+function dismissFeedback(){
+    require('Database.php');
+
+
+    
+    $sql = "DELETE FROM feedback  WHERE   f_id = '".$_POST["id"]."'  ";
+    $result = $conn->query($sql);
+
+}
+
+
+function getOrderDetailsSeller(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM orders ;";
+    
+    $result = $conn->query($sql);
+
+    $sellerOrders = [];
+
+    while($row = $result->fetch())
+    {
+        $sql_2 = "SELECT * FROM orderedproducts WHERE o_id = '".$row["o_id"]."' ;";
+    
+        $result_2 = $conn->query($sql_2);
+
+        while($row_2=$result_2->fetch()){
+
+            $sql_3 = "SELECT * FROM product WHERE p_id = '".$row_2["p_id"]."' ;";
+    
+            $result_3 = $conn->query($sql_3);
+
+            $row_3=$result_3->fetch();
+
+            if($row_3["s_id"]==$_SESSION["id"]){
+                echo json_encode(["test"=>$row_2["p_id"]]);
+                $sellerOrders[$row["o_id"]][$row_2["p_id"]] = ["image"=>$row_3["p_image"],"name"=>$row_3["p_name"],"qty"=>$row_2["op_qty"],"price"=>$row_3["p_price"]];
+                
+            }
+
+        }
+        echo json_encode(["test"=>2]);
+
+
+    }
+    
+    echo json_encode(["sellerOrders"=>$sellerOrders]);
+
+}
+
+
 
 ?>
