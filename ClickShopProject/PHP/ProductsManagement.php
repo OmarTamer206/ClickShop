@@ -361,6 +361,28 @@ function deleteFromCart(){
     echo json_encode(["state"=>"success" ]);
 }
 
+function removeAddress(){
+    require('Database.php');
+    
+    $sql = "DELETE FROM billingaddress WHERE  ba_id='".$_POST["id"]."'";
+
+
+        $result = $conn->query($sql);
+        
+
+}
+
+function updateAddress(){
+    require('Database.php');
+    
+    $sql = "UPDATE billingaddress SET  ba_city='".$_POST["city"]."',ba_street='".$_POST["street"]."',ba_buildingNumber='".$_POST["building"]."' ,ba_floor='".$_POST["floor"]."',ba_apartmentNumber='".$_POST["apartment"]."' WHERE  ba_id = '".$_POST["id"]."'";
+
+
+        $result = $conn->query($sql);
+        
+
+}
+
 function getAddresses(){
     require('Database.php');
     session_start();

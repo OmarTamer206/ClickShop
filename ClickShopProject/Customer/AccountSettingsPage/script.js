@@ -134,4 +134,154 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error:", error.message);
         }
     }
+
+    let editAddress = document.querySelector("#editAddress");
+    let editCity = document.querySelector("#editCity");
+    let editStreet = document.querySelector("#editStreet");
+    let editBuilding = document.querySelector("#editBuilding");
+    let editFloor = document.querySelector("#editFloor");
+    let editApartment = document.querySelector("#editApartment");
+    let editBtn = document.querySelector("#edit");
+    let removeBtn = document.querySelector("#remove");
+    let editBForm = document.querySelector("#editB");
+
+    let addresses = await getAddresses();
+
+    for (const address in addresses["address"]) {
+        editAddress.innerHTML += `
+        <option value=${address}>${addresses["address"][address].city} ,${addresses["address"][address].street}  </option>
+        `;
+    }
+
+    editBForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
+
+    editAddress.addEventListener("change", () => {
+        let addressId = editAddress.value;
+
+        editCity.value = addresses["address"][addressId].city;
+        editStreet.value = addresses["address"][addressId].street;
+        editBuilding.value = addresses["address"][addressId].building;
+        editFloor.value = addresses["address"][addressId].floor;
+        editApartment.value = addresses["address"][addressId].apartment;
+        editBtn.disabled = false;
+        removeBtn.disabled = false;
+    });
+
+    editBtn.addEventListener("click", async () => {
+        await updateAddress(
+            editAddress.value,
+            editCity.value,
+            editStreet.value,
+            editBuilding.value,
+            editFloor.value,
+            editApartment.value
+        );
+
+        window.location.href = "../../index.html";
+    });
+
+    removeBtn.addEventListener("click", async () => {
+        await removeAddress(editAddress.value);
+        window.location.href = "../../index.html";
+    });
+
+    async function getAddresses() {
+        const data = {
+            functionName: "getAddresses",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    async function updateAddress(id, city, street, building, floor, apartment) {
+        const data = {
+            id: id,
+            city: city,
+            street: street,
+            building: building,
+            floor: floor,
+            apartment: apartment,
+            functionName: "updateAddress",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    async function removeAddress(id) {
+        const data = {
+            id: id,
+
+            functionName: "removeAddress",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
 });

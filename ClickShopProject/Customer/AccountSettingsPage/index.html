@@ -269,19 +269,16 @@
                         <h2>Edit Billing Address</h2>
                         <label>Choose Address :</label>
                         <select name="address" id="editAddress">
-                            <option value="address1">Address 1</option>
-                            <option value="address2">Adderess 2</option>
-                            <option value="address3">Address 3</option>
-                            <option value="address4">Address 4</option>
-                            <option value="address5">Address 5</option></select
+                            <option value="" hidden selected>
+                                Select Address
+                            </option></select
                         ><br />
                         <label>City :</label>
                         <select name="city" id="editCity">
-                            <option value="cairo">Cairo</option>
-                            <option value="alex">Alexandria</option>
-                            <option value="aswan">Aswan</option>
-                            <option value="portsaid">Port Said</option>
-                            <option value="giza">Giza</option></select
+                            <option>Cairo</option>
+                            <option>Giza</option>
+                            <option>Alex</option>
+                            <option>Mansora</option></select
                         ><br />
                         <label>Street :</label>
                         <input
@@ -296,16 +293,30 @@
                             id="editBuilding"
                         /><br />
                         <label>Floor :</label>
-                        <input type="number" name="floor" id="floor" /><br />
+                        <input
+                            type="number"
+                            name="floor"
+                            id="editFloor"
+                        /><br />
                         <label>Apartment Number :</label>
                         <input
                             type="number"
                             name="apartment"
-                            id="apartment"
+                            id="editApartment"
                         /><br />
                         <div class="editB_Btns">
-                            <input id="edit" type="submit" value="Edit" />
-                            <input id="remove" type="submit" value="Remove" />
+                            <input
+                                id="edit"
+                                type="submit"
+                                value="Edit"
+                                disabled
+                            />
+                            <input
+                                id="remove"
+                                type="submit"
+                                value="Remove"
+                                disabled
+                            />
                         </div>
                     </form>
                 </div>
