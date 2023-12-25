@@ -1,8 +1,38 @@
 let allOrders = document.querySelector(".allorders");
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await getOrderDetailsSeller();
+    let sellerReport = await getOrderDetailsSeller();
 
+    for (const order in sellerReport["sellerOrders"]) {
+        let sumPrice = 0;
+        for (const product in sellerReport["sellerOrders"][order]) {
+            sumPrice +=
+                sellerReport["sellerOrders"][order][product].price *
+                sellerReport["sellerOrders"][order][product].qty;
+        }
+
+        allOrders.innerHTML += `
+        <tr>
+        <td>
+                    <a href="../DetailedSellerOrderPage/index.html?id=${order}">
+                    <div class="Order">
+                    <span class="info"
+                                >Order ID: <span class="Onum">${order}</span></span
+                                >
+                                
+                            <span class="Odate">
+                            <span class="info">Date :</span>${sellerReport["sellerOrders"][order][0].date}</span
+                            >
+                            <span class="info"
+                                >Total Price:
+                                <span class="Ototal">${sumPrice}</span></span
+                                >
+                                </div>
+                    </a>
+                    </td>
+                    </tr>
+                    `;
+    }
     async function getOrderDetailsSeller() {
         const data = {
             functionName: "getOrderDetailsSeller",

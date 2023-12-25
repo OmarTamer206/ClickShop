@@ -643,28 +643,33 @@ function getOrderDetailsSeller(){
         $result_2 = $conn->query($sql_2);
 
         while($row_2=$result_2->fetch()){
-
-            $sql_3 = "SELECT * FROM product WHERE p_id = '".$row_2["p_id"]."' ;";
-    
+            
+            $sql_3 = "SELECT * FROM product WHERE p_id = '".$row_2["p_id"]."' AND s_id = '".$_SESSION["id"]."' ;";
+            
             $result_3 = $conn->query($sql_3);
+            
+            while($row_3 = $result_3->fetch()){
 
-            $row_3=$result_3->fetch();
-
-            if($row_3["s_id"]==$_SESSION["id"]){
-                echo json_encode(["test"=>$row_2["p_id"]]);
-                $sellerOrders[$row["o_id"]][$row_2["p_id"]] = ["image"=>$row_3["p_image"],"name"=>$row_3["p_name"],"qty"=>$row_2["op_qty"],"price"=>$row_3["p_price"]];
                 
-            }
+                    $sellerOrders[$row["o_id"]][] = ["image"=>$row_3["p_image"],"name"=>$row_3["p_name"],"qty"=>$row_2["op_qty"],"price"=>$row_3["p_price"],"date"=>$row["o_date"]];
+                }
+                
 
         }
-        echo json_encode(["test"=>2]);
 
 
     }
     
     echo json_encode(["sellerOrders"=>$sellerOrders]);
 
+
+
+
+
+
 }
+
+
 
 
 

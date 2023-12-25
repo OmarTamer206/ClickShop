@@ -23,7 +23,7 @@ a {
     font-weight: bold;
 }
 .AllOrders {
-    width: 55%;
+    width: 90%;
     /* margin-left: auto;
     margin-right: auto;
     margin-bottom: 150px;
@@ -86,7 +86,7 @@ a {
 }
 
 .imgCard {
-    width: 30%;
+    width: 200px;
 }
 
 .container {
