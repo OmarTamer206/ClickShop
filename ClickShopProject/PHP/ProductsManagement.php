@@ -222,6 +222,7 @@ function getProductReviewsById(){
     
     $result = $conn->query($sql);
     $i=0;
+    $products=[];
     while($row = $result->fetch()){
 
         $products[$i++] = ["name"=>$row["c_name"],"rate"=>$row["r_rating"],"comment"=>$row["r_comment"]];   
@@ -475,6 +476,62 @@ function getOrders(){
    
     echo json_encode(["orders"=>$orders]);
 
+}
+
+function sendReview(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "INSERT INTO rates  (c_id,p_id,r_rating,r_comment) VALUES ('".$_SESSION["id"]."','".$_POST["id"]."','".$_POST["rate"]."','".$_POST["comment"]."') ;";
+    
+    $result = $conn->query($sql);
+    
+    
+}
+
+function checkReview(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM rates WHERE c_id = '".$_SESSION["id"]."' AND p_id = '".$_POST["id"]."' ;";
+    
+    $result = $conn->query($sql);
+    
+    $state=false; //msh hybynhalo
+
+    if($row = $result->fetch()){
+        $state = false;
+    }
+    else{
+
+        $sql_2 = "SELECT * FROM orders WHERE c_id = '".$_SESSION["id"]."'  ;";
+    
+        $result_2 = $conn->query($sql_2);
+
+        while($row_2 = $result_2->fetch()){
+
+            // $sql_2 = "SELECT * FROM orders WHERE c_id = '".$_SESSION["id"]."'  ;";
+    
+            // $result_2 = $conn->query($sql_2);
+
+            
+
+                $sql_3 = "SELECT * FROM orderedproducts WHERE o_id = '".$row_2["o_id"]."' AND p_id ='".$_POST["id"]."' ;";
+
+                $result_3 = $conn->query($sql_3);
+
+                while($row_3 = $result_3->fetch()){
+                
+                    $state=true;
+
+                }
+
+
+            
+        }
+
+    }
+    echo json_encode(["state"=>$state]);
 }
 
 ?>

@@ -186,32 +186,47 @@
 
             <div class="sections">
                 <div class="editProfile">
-                    <form id="editP" action="index.html">
+                    <form
+                        id="editP"
+                        action="../../PHP/AccountManagement.php"
+                        method="post"
+                    >
+                        <input type="hidden" name="RD" value="EP" />
                         <!-- <input type="file" src="" alt="" /> -->
                         <h2>Edit Profile</h2>
                         <label>Name :</label>
-                        <input type="text" name="name" /><br />
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            required
+                        /><br />
                         <label>Email :</label>
-                        <input type="email" name="email" /><br />
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            required
+                        /><br />
                         <label>Password :</label>
-                        <input type="password" name="pass" /><br />
+                        <input
+                            type="password"
+                            name="pass"
+                            id="pass"
+                            required
+                        /><br />
                         <label>Phone Number :</label>
-                        <input type="number" name="phone" /><br />
+                        <input
+                            type="number"
+                            name="phone"
+                            id="phone"
+                            required
+                        /><br />
                         <label>Gender :</label>
-                        <select name="gender">
+                        <select name="gender" id="gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-                        <br />
-                        <label>Profile Picture :</label>
-                        <input
-                            type="file"
-                            id="profile-photo"
-                            class="custom-file-input"
-                            accept="image/*"
-                            name="img"
-                            required
-                        />
 
                         <br />
                         <input type="submit" name="submit" />
@@ -219,10 +234,10 @@
                 </div>
 
                 <div class="addBilling">
-                    <form id="addB" action="index.html">
+                    <form id="addB">
                         <h2>Add Billing Address</h2>
                         <label>City :</label>
-                        <select name="city">
+                        <select name="city" id="city">
                             <option value="cairo">Cairo</option>
                             <option value="alex">Alexandria</option>
                             <option value="aswan">Aswan</option>
@@ -230,22 +245,30 @@
                             <option value="giza">Giza</option></select
                         ><br />
                         <label>Street :</label>
-                        <input type="text" name="street" /><br />
+                        <input type="text" name="street" id="street" /><br />
                         <label>Building Number :</label>
-                        <input type="number" name="building" /><br />
+                        <input
+                            type="number"
+                            name="building"
+                            id="building"
+                        /><br />
                         <label>Floor :</label>
-                        <input type="number" name="floor" /><br />
+                        <input type="number" name="floor" id="floor" /><br />
                         <label>Apartment Number :</label>
-                        <input type="number" name="apartment" /><br />
-                        <input type="submit" value="Add" />
+                        <input
+                            type="number"
+                            name="apartment"
+                            id="apartment"
+                        /><br />
+                        <input type="submit" value="Add" id="add" />
                     </form>
                 </div>
 
                 <div class="editBilling">
-                    <form id="editB" action="index.html">
+                    <form id="editB">
                         <h2>Edit Billing Address</h2>
                         <label>Choose Address :</label>
-                        <select name="address">
+                        <select name="address" id="editAddress">
                             <option value="address1">Address 1</option>
                             <option value="address2">Adderess 2</option>
                             <option value="address3">Address 3</option>
@@ -253,7 +276,7 @@
                             <option value="address5">Address 5</option></select
                         ><br />
                         <label>City :</label>
-                        <select name="city">
+                        <select name="city" id="editCity">
                             <option value="cairo">Cairo</option>
                             <option value="alex">Alexandria</option>
                             <option value="aswan">Aswan</option>
@@ -261,13 +284,25 @@
                             <option value="giza">Giza</option></select
                         ><br />
                         <label>Street :</label>
-                        <input type="text" name="street" /><br />
+                        <input
+                            type="text"
+                            name="street"
+                            id="editStreet"
+                        /><br />
                         <label>Building Number :</label>
-                        <input type="number" name="building" /><br />
+                        <input
+                            type="number"
+                            name="building"
+                            id="editBuilding"
+                        /><br />
                         <label>Floor :</label>
-                        <input type="number" name="floor" /><br />
+                        <input type="number" name="floor" id="floor" /><br />
                         <label>Apartment Number :</label>
-                        <input type="number" name="apartment" /><br />
+                        <input
+                            type="number"
+                            name="apartment"
+                            id="apartment"
+                        /><br />
                         <div class="editB_Btns">
                             <input id="edit" type="submit" value="Edit" />
                             <input id="remove" type="submit" value="Remove" />

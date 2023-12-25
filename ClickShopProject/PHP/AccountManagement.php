@@ -1,16 +1,22 @@
 <?php
 
 
-
+    if(isset($_GET["fn"])){
+        $_GET["fn"]();
+    }
  
-    
-    if(isset($_POST["RD"])){
+    else if(isset($_POST["RD"])){
         switch ($_POST['RD']) {
             case 'AB':
                 addBrand();
                 break;
                 case 'AS':
                     addSeller();
+                    break;
+                    
+                
+                case 'EP':
+                    editProfile();
                     break;
                     
                 }
@@ -83,8 +89,38 @@ function signupUser(){
     $sql = "INSERT INTO customer (c_name,c_email,c_pNumber,c_password,c_gender)
     VALUES ('".$_POST["userName"]."','".$_POST["userEmail"]."','".$_POST["userPhone"]."','".$_POST["userPass"]."','".$_POST["userGender"]."');";
     $result = $conn->query($sql);
+    $newRecordId= $conn->lastInsertId();
+    session_start();
+    $_SESSION["id"]=$newRecordId;
+    $_SESSION["username"]=$row["c_name"];
     $conn=null;
 }
+
+function checkAuth(){
+
+    session_start();
+
+    if(isset($_SESSION["id"])){
+        echo json_encode(["state"=>true]);
+    }
+    else{
+        echo json_encode(["state"=>false]);
+
+    }
+
+}
+
+function logout(){
+
+    session_start();
+
+    session_unset();
+    session_regenerate_id(true); //delete old session id
+    session_destroy();
+    header("Location: ../index.html");
+
+}
+
 
 function addAdmin(){
 
@@ -178,6 +214,62 @@ function checkEmail(){
     }
 
 }
+
+function sendFeedback(){
+
+    require('Database.php');
+    session_start();
+    $currentDateTime = new DateTime();
+    $formattedDateTime = $currentDateTime->format('Y-m-d H:i:s');
+
+    $sql = "INSERT INTO feedback (c_id,f_date,f_email,f_message)
+    VALUES ('".$_SESSION["id"]."','".$formattedDateTime."','".$_GET["email"]."','".$_GET["message"]."');";
+    $result = $conn->query($sql);
+    $conn=null;
+    header("Location: ../index.html");
+
+
+}
+
+
+function editProfile(){
+    require('Database.php');
+    session_start();
+    
+       
+
+        $sql = "UPDATE customer SET c_name = '".$_POST["name"]."',c_email = '".$_POST["email"]."' , c_password = '".$_POST["pass"]."' , c_pNumber = '".$_POST["phone"]."', c_gender = '".$_POST["gender"]."' WHERE  c_id = '".$_SESSION["id"]."'";
+        $result = $conn->query($sql);
+
+   
+        header("Location: ../index.html");
+
+     
+
+      
+}
+
+
+function getProfileData(){
+    require('Database.php');
+    session_start();
+    
+    
+
+ 
+    $sql = "SELECT * FROM customer WHERE c_id = '".$_SESSION["id"]."' ";
+     $result = $conn->query($sql);
+    
+     $row = $result->fetch();
+
+
+
+     
+     echo json_encode(["name"=>$row["c_name"],"email"=>$row["c_email"],"phone"=>$row["c_pNumber"],"gender"=>$row["c_gender"]]);
+     exit;
+
+     }
+
 
 
 
