@@ -518,11 +518,13 @@ function checkReview(){
     require('Database.php');
     session_start();
     
-    $sql = "SELECT * FROM rates WHERE c_id = '".$_SESSION["id"]."' AND p_id = '".$_POST["id"]."' ;";
+    $state=false; //msh hybynhalo
+    
+    if(isset($_SESSION["id"])){
+        $sql = "SELECT * FROM rates WHERE c_id = '".$_SESSION["id"]."' AND p_id = '".$_POST["id"]."' ;";
     
     $result = $conn->query($sql);
     
-    $state=false; //msh hybynhalo
 
     if($row = $result->fetch()){
         $state = false;
@@ -556,6 +558,8 @@ function checkReview(){
         }
 
     }
+    }
+
     echo json_encode(["state"=>$state]);
 }
 

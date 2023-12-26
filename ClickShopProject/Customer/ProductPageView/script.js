@@ -28,6 +28,7 @@ let productDetails = document.querySelector(".ProductDetails p");
 let productReviews = document.querySelector(".CommentAndRating");
 let productSwipers = document.querySelector(".swiper-wrapper");
 let rateDiv = document.querySelector(".rateDiv");
+let addToCartBtn = document.querySelector("#addCart");
 
 document.addEventListener("DOMContentLoaded", async () => {
     let productData = await getProductDetails();
@@ -313,9 +314,44 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error:", error.message);
         }
     }
-});
 
-let addToCartBtn = document.querySelector("#addCart");
+    let authState = await checkAuth();
+
+    if (!authState["state"]) {
+        addToCartBtn.disabled = "true";
+        addToCartBtn.style;
+    }
+
+    async function checkAuth() {
+        const data = {
+            functionName: "checkAuth",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/AccountManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+});
 
 addToCartBtn.addEventListener("click", async () => {
     const data = {
