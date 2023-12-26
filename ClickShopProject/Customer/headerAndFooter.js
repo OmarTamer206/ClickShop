@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="help"
                     type="submit"
-                    onclick="location.href='../HelpPage/index.html'"
+                    onclick="location.href='../../HelpPage/index.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="cart"
                     type="submit"
-                    onclick="location.href='../CartPage/CartPage.html'"
+                    onclick="location.href='../../CartPage/CartPage.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -220,14 +220,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <li style="display: none">
                             <a
                                 class="dropdown-item"
-                                href="../MyOrdersPage/index.html"
+                                href="../../MyOrdersPage/index.html"
                                 >My Orders Page</a
                             >
                         </li>
                         <li style="display: none">
                             <a
                                 class="dropdown-item"
-                                href="../AccountSettingsPage/index.html"
+                                href="../../AccountSettingsPage/index.html"
                                 >Account Settings</a
                             >
                         </li>
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="help"
                     type="submit"
-                    onclick="location.href='../LoginPage.html'"
+                    onclick="location.href='../../LoginPage.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="cart"
                     type="submit"
-                    onclick="location.href='../LoginPage.html'"
+                    onclick="location.href='../../LoginPage.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

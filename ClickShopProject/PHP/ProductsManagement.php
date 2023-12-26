@@ -131,7 +131,7 @@ function SP(){ //Search Product
 
     $products=[];
     if($_GET["sort"]=="price"){
-        echo json_encode(["1"=>"2"]);
+        // echo json_encode(["1"=>"2"]);
         $num=1;
        $sql = "SELECT * FROM product WHERE p_name LIKE '%".$_GET["search"]."%' ORDER BY p_price ".$direction.";";
     }
@@ -199,13 +199,16 @@ function getProductsOfSeller(){
 function getProductSimilarsById(){
     require('Database.php');
 
-    
+        $sql_0 = "SELECT * FROM product WHERE p_id = '".$_POST["productId"]."';";
+        $result_0 = $conn->query($sql_0);
+        $row_0 = $result_0->fetch();
 
-       $sql = "SELECT * FROM product p JOIN category c ON p.cat_id = c.cat_id WHERE p.p_id = '".$_POST["productId"]."';";
+       $sql = "SELECT * FROM product p  JOIN category c ON p.cat_id = c.cat_id WHERE p.cat_id = '".$row_0["cat_id"]."';";
 
     
     $result = $conn->query($sql);
     $i=0;
+    $products =[];
     while($row = $result->fetch()){
 
         $products[$i++] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"rate"=>$row["p_rating"],"price"=>$row["p_price"]];   

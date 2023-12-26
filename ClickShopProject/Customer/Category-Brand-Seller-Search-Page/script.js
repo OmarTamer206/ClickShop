@@ -75,7 +75,6 @@ async function getProducts(sort, direction) {
 
     console.log(data);
     console.log(JSON.stringify(data));
-
     if (cat != null) {
         try {
             let response = await fetch(
@@ -99,6 +98,8 @@ async function getProducts(sort, direction) {
             console.error("Error:", error.message);
         }
     } else if (search != null) {
+        data.functionName = "SP";
+
         try {
             let response = await fetch(
                 `../../PHP/ProductsManagement.php?fN=SP&search=${search}&sort=${sort.value}&direction=${direction.value}`,
