@@ -115,6 +115,21 @@ function checkAuth(){
 
 }
 
+function getUserType(){
+
+    session_start();
+
+    if(isset($_SESSION["type"])){
+    echo json_encode(["type"=>$_SESSION["type"]]);
+
+    }
+    else{
+    echo json_encode(["type"=>false]);
+
+    }
+
+}
+
 function logout(){
 
     session_start();
