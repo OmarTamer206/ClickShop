@@ -40,6 +40,7 @@ function login(){
         session_start();
         $_SESSION["id"]=$row["c_id"];
         $_SESSION["username"]=$row["c_name"];
+        $_SESSION["type"]="customer";
         
         $conn=null;
         echo  json_encode(['state' => "user"]);
@@ -53,6 +54,8 @@ function login(){
         session_start();
         $_SESSION["id"]=$row["a_id"];
         $_SESSION["username"]=$row["a_name"];
+        $_SESSION["type"]="admin";
+
         
         $conn=null;
         echo  json_encode(['state' => "admin"]);
@@ -67,6 +70,8 @@ function login(){
         session_start();
         $_SESSION["id"]=$row["s_id"];
         $_SESSION["username"]=$row["s_name"];
+        $_SESSION["type"]="seller";
+
         
         $conn=null;
         echo  json_encode(['state' => "seller"]);
@@ -271,6 +276,9 @@ function getProfileData(){
      }
 
 
+
+   
+    
 
 
 
