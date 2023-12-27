@@ -106,7 +106,7 @@ function checkAuth(){
     session_start();
 
     if(isset($_SESSION["id"])){
-        echo json_encode(["state"=>true]);
+        echo json_encode(["state"=>true,"username"=>$_SESSION["username"]]);
     }
     else{
         echo json_encode(["state"=>false]);

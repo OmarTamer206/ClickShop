@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
+                        id="accBTN"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 class="color000000 svgShape"
                             ></path>
                         </svg>
-                        Accounts
+                        ${authState["username"]}
                     </button>
                     <ul class="dropdown-menu">
                         

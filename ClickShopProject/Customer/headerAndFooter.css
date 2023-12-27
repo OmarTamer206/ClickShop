@@ -92,11 +92,16 @@ header a img {
 }
 
 .btn {
-    width: 150px;
+    display: inline-block;
+    /* width: 150px; */
     height: 46px;
 
     background-color: rgb(193, 137, 69);
     border: none;
+}
+
+.btn svg {
+    margin-right: 12px;
 }
 
 .helpBtn {
