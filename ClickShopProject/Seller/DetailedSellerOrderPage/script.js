@@ -8,7 +8,6 @@ let orderTotal = document.querySelector(".OTotal");
 document.addEventListener("DOMContentLoaded", async () => {
     let authState = await checkAuth();
     let userType = await getUserType();
-    let orderValidation = await checkOrderSellerValidation();
     if (authState["state"]) {
         if (userType["type"] == "admin") {
             window.location.href = "../../Admin/adminHome/adminhome.html";
@@ -18,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         window.location.href = "../../LoginPage.html";
     }
+    let orderValidation = await checkOrderSellerValidation();
 
     if (!orderValidation["state"]) {
         window.location.href = "../SallerSalesPage/index.html";

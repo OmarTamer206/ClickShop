@@ -66,7 +66,6 @@ let pCategories = document.querySelector("#cat");
 document.addEventListener("DOMContentLoaded", async () => {
     let authState = await checkAuth();
     let userType = await getUserType();
-    let editValidation = await checkEditProductValidation();
     if (authState["state"]) {
         if (userType["type"] == "admin") {
             window.location.href = "../../Admin/adminHome/adminhome.html";
@@ -76,6 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         window.location.href = "../../LoginPage.html";
     }
+    let editValidation = await checkEditProductValidation();
 
     if (!editValidation["state"]) {
         window.location.href = "../ManageProductsSeller/index.html";

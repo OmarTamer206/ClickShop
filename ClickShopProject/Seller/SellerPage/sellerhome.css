@@ -8,6 +8,11 @@ body {
     background: #8ecaf2;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;

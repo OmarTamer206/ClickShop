@@ -510,8 +510,9 @@ function getOrders(){
 
 function checkOrderValidation(){
     require('Database.php');
+    session_start();
     
-    $sql = "SELECT * FROM orders;";
+    $sql = "SELECT * FROM orders WHERE c_id = '".$_SESSION["id"]."' ;";
     
     $result = $conn->query($sql);
     

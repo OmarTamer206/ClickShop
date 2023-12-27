@@ -11,7 +11,6 @@ let sendBtn = document.querySelector("#send");
 document.addEventListener("DOMContentLoaded", async () => {
     let authState = await checkAuth();
     let userType = await getUserType();
-    let FeedbackValidation = await checkFeedbackValidation();
     if (authState["state"]) {
         if (userType["type"] == "customer") {
             window.location.href = "../../index.html";
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         window.location.href = "../../LoginPage.html";
     }
+    let FeedbackValidation = await checkFeedbackValidation();
 
     if (!FeedbackValidation["state"]) {
         window.location.href = "../AdminInboxPage/index.html";

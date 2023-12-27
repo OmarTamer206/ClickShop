@@ -4,7 +4,6 @@ const id = urlParams.get("id"); // Get the value of the "id" parameter
 document.addEventListener("DOMContentLoaded", async () => {
     let authState = await checkAuth();
     let userType = await getUserType();
-    let orderValidation = await checkOrderValidation();
     if (authState["state"]) {
         if (userType["type"] == "admin") {
             window.location.href = "../../Admin/adminHome/adminhome.html";
@@ -14,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         window.location.href = "../../LoginPage.html";
     }
+    let orderValidation = await checkOrderValidation();
 
     if (!orderValidation["state"]) {
         window.location.href = "../MyOrdersPage/index.html";
