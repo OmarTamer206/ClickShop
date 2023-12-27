@@ -431,8 +431,18 @@ addToCartBtn.addEventListener("click", async () => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.json();
+        // return response.json();
     } catch (error) {
         console.error("Error:", error.message);
     }
+
+    addToCartBtn.innerHTML = "Added to Cart ✓";
+    addToCartBtn.disabled = true;
+    addToCartBtn.style.backgroundColor = "blue";
+
+    setTimeout(() => {
+        addToCartBtn.innerHTML = "Add to Cart";
+        addToCartBtn.disabled = false;
+        addToCartBtn.style.backgroundColor = "darkorange";
+    }, "1000");
 });
