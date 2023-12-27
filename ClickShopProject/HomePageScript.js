@@ -104,4 +104,93 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error:", error.message);
         }
     }
+
+    let productSwipers = document.querySelector(".swiper-wrapper");
+    let bestProducts = await getBestProducts();
+
+    for (const product in bestProducts["products"]) {
+        let stars = "";
+
+        for (let i = 0; i < bestProducts["products"][product].rate; i++) {
+            stars += `<img
+            src="Media/Stars/filledStar.png"
+            alt=""
+            />
+            `;
+        }
+        for (let i = bestProducts["products"][product].rate; i < 5; i++) {
+            stars += `
+                <img
+                    src="Media/Stars/emptyStar.png"
+                    alt=""
+                />
+                `;
+        }
+        productSwipers.innerHTML += `
+        <div class="swiper-slide">
+                    <a href="Customer/ProductPageView/index.html?id=${bestProducts["products"][product].id}">
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="Media/ProductImages/${bestProducts["products"][product].image}" alt="Product Image" />
+                        </div>
+                        <h3>${bestProducts["products"][product].name}</h3>
+    
+                        <p>${bestProducts["products"][product].price}</p>
+    
+                        <div class="ratingP">
+                            <span class="ratesStars">
+                               ${stars}
+                            </span>
+                            
+                        </div>
+                    </div>
+                </a>
+                </div>
+        `;
+    }
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 0,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    async function getBestProducts() {
+        const data = {
+            functionName: "getBestProducts",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
 });

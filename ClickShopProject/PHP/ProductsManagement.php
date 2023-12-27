@@ -218,6 +218,31 @@ function getProductSimilarsById(){
     echo json_encode(["products"=>$products ]);
 }
 
+function getBestProducts(){
+    require('Database.php');
+
+    $sql_0 = "SELECT p_id, COUNT(*) AS count
+    FROM orderedproducts
+    GROUP BY p_id
+    ORDER BY count DESC;";
+    $result_0 = $conn->query($sql_0);
+    
+   
+    $i=0;
+    $products =[];
+    while($row_0 = $result_0->fetch()){
+
+    $sql = "SELECT * FROM product p WHERE p_id = '".$row_0["p_id"]."';";
+    $result = $conn->query($sql);
+    $row = $result->fetch();
+
+    $products[$i++] = ["count"=>$row_0["count"],"id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"rate"=>$row["p_rating"],"price"=>$row["p_price"]];   
+
+}
+
+echo json_encode(["products"=>$products ]);
+}
+
 function getProductReviewsById(){
     require('Database.php');
 
