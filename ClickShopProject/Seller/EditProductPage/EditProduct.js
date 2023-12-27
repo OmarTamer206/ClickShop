@@ -64,6 +64,114 @@ let pBrand = document.querySelector("#brand");
 let pCategories = document.querySelector("#cat");
 
 document.addEventListener("DOMContentLoaded", async () => {
+    let authState = await checkAuth();
+    let userType = await getUserType();
+    let editValidation = await checkEditProductValidation();
+    if (authState["state"]) {
+        if (userType["type"] == "admin") {
+            window.location.href = "../../Admin/adminHome/adminhome.html";
+        } else if (userType["type"] == "customer") {
+            window.location.href = "../../index.html";
+        }
+    } else {
+        window.location.href = "../../LoginPage.html";
+    }
+
+    if (!editValidation["state"]) {
+        window.location.href = "../ManageProductsSeller/index.html";
+    }
+
+    async function checkAuth() {
+        const data = {
+            functionName: "checkAuth",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/AccountManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    async function getUserType() {
+        const data = {
+            functionName: "getUserType",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/AccountManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    async function checkEditProductValidation() {
+        const data = {
+            id: id,
+            functionName: "checkEditProductValidation",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/ProductsManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
     // Get Brands And Categories Starts
     let getBrandsAndCategories = await getDataOfBrandsAndCategories();
     let brands = getBrandsAndCategories.brands;

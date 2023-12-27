@@ -179,3 +179,7 @@ form .text h3 a:hover {
     display: inline-block;
     margin-bottom: 8px;
 }
+#errorEmailExist,
+#errorPass {
+    color: red;
+}

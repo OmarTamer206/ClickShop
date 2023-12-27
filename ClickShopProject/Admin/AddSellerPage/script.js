@@ -72,10 +72,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-let addAdminForm = document.querySelector("#addAdminForm");
-let aName = document.querySelector("#name");
-let aPhone = document.querySelector("#num");
-let aGender = document.querySelector("#gender");
+let addSellerForm = document.querySelector("#addAdminForm");
+let eName = document.querySelector("#name");
+let ePhone = document.querySelector("#num");
 let email = document.querySelector("#email");
 let pass = document.querySelector("#pass");
 let emailExistCheck = document.querySelector("#errorEmailExist");
@@ -103,44 +102,12 @@ pass.addEventListener("focusout", () => {
     }
 });
 
-addAdminForm.addEventListener("submit", (event) => {
+addSellerForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (emailExistCheck.innerHTML === "" && passCheck.innerHTML === "") {
-        signUpUser();
-        window.location.href = "../adminHome/adminhome.html";
+        addSellerForm.submit();
     }
 });
-
-async function signUpUser() {
-    const data = {
-        userName: aName.value,
-        userPhone: aPhone.value,
-        userGender: aGender.value,
-        userEmail: email.value,
-        userPass: pass.value,
-        functionName: "addAdmin",
-    };
-
-    console.log(data);
-
-    try {
-        console.log(JSON.stringify(data));
-
-        const response = await fetch("../../PHP/AccountManagement.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-    } catch (error) {
-        console.error("Error:", error.message);
-    }
-}
 
 async function checkEmail() {
     const data = {

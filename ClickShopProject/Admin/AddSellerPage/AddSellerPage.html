@@ -10,17 +10,7 @@
     </head>
     <body>
         <header>
-            <aside id="OrderCount">
-                <div class="order-info">
-                    <p>Today's Orders: <strong>10</strong></p>
-                </div>
-            </aside>
             <h1><a href="../adminHome/adminhome.html">Admin HomePage</a></h1>
-            <aside id="OverallProfit">
-                <div class="order-info">
-                    <p>Overall Profit this Month: <strong>$5000</strong></p>
-                </div>
-            </aside>
         </header>
         <div class="centerDiv">
             <div class="wrapper">
@@ -29,6 +19,7 @@
                     action="../../PHP/AccountManagement.php"
                     method="post"
                     enctype="multipart/form-data"
+                    id="addSellerForm"
                 >
                     <div class="input-box">
                         <input type="hidden" name="RD" value="AS" />
@@ -38,17 +29,6 @@
                             name="name"
                             type="text"
                             placeholder="Enter your name"
-                            required
-                        />
-                    </div>
-                    <div class="input-box">
-                        <label for="img">Choose profile picture</label>
-                        <input
-                            type="file"
-                            id="profile-photo"
-                            class="custom-file-input"
-                            accept="image/*"
-                            name="img"
                             required
                         />
                     </div>
@@ -74,6 +54,8 @@
                             required
                         />
                     </div>
+                    <span id="errorEmailExist"></span>
+                    <br />
                     <div class="input-box">
                         <label for="pass">Seller's Password</label>
                         <input
@@ -84,7 +66,8 @@
                             required
                         />
                     </div>
-
+                    <span id="errorPass"></span>
+                    <br />
                     <div class="input-box button">
                         <input type="Submit" value="Add Now" />
                     </div>

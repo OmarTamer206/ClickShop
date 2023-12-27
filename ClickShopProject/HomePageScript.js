@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     menuItems.forEach(function (menuItem) {
         menuItem.addEventListener("mouseover", function () {
             // Hide all submenus
-            menuItems.forEach(function (item) {
-                // item.classList.remove("active");
-                var submenu = item.querySelector(".submenu");
-                if (submenu) {
-                    submenu.style.display = "none";
-                }
-            });
+            // menuItems.forEach(function (item) {
+            // item.classList.remove("active");
+            //     var submenu = item.querySelector(".submenu");
+            //     if (submenu) {
+            //         submenu.style.display = "none";
+            //     }
+            // });
 
             // Show the submenu of the hovered item
             // menuItem.classList.add("active");

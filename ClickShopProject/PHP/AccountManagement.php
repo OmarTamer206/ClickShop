@@ -175,17 +175,10 @@ function addSeller(){
 
     require('Database.php');
 
-    $img_name = $_FILES['img']['name'];
-    $tmp_name = $_FILES['img']['tmp_name'];
-     $new_img_name;
-    $img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
+    
 
-    $new_img_name = uniqid("IMG-", true).'.'.$img_extension;
-	$img_upload_path = '../Media/Sellers/'.$new_img_name;
-    move_uploaded_file($tmp_name, $img_upload_path);
-
-    $sql = "INSERT INTO seller (s_name,s_profilePic,s_email,s_password)
-    VALUES ('".$_POST["name"]."','".$new_img_name."','".$_POST["email"]."','".$_POST["pass"]."');";
+    $sql = "INSERT INTO seller (s_name,s_email,s_password)
+    VALUES ('".$_POST["name"]."','".$_POST["email"]."','".$_POST["pass"]."');";
     $result = $conn->query($sql);
     $conn=null;
     header("Location: ../Admin/adminHome/adminhome.html");

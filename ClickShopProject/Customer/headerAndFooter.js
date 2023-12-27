@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="help"
                     type="submit"
-                    onclick="location.href='../../HelpPage/index.html'"
+                    onclick="location.href='../../Customer/HelpPage/index.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button
                     id="cart"
                     type="submit"
-                    onclick="location.href='../../CartPage/CartPage.html'"
+                    onclick="location.href='../../Customer/CartPage/CartPage.html'"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

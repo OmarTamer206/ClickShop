@@ -246,6 +246,7 @@ function getProductDataById(){
     
     
     $result = $conn->query($sql);
+    $products =[];
     if($row = $result->fetch()){
 
         $products[0] = ["id"=>$row["p_id"],"name"=>$row["p_name"],"image"=>$row["p_image"],"brand"=>$row["b_id"],"category"=>$row["cat_id"],"qty"=>$row["p_qty"],"price"=>$row["p_price"],"desc"=>$row["p_description"],"rate"=>$row["p_rating"]];   
@@ -335,6 +336,7 @@ function getCart(){
         $sql = "SELECT * FROM cart WHERE c_id = '".$_SESSION["id"]."';";
         $result = $conn->query($sql);
     $i=0;
+    $products=[];
     while($row = $result->fetch()){
         $sql_2 = "SELECT * FROM product WHERE p_id = '".$row["p_id"]."';";
         $result_2 = $conn->query($sql_2);
@@ -506,6 +508,88 @@ function getOrders(){
 
 }
 
+function checkOrderValidation(){
+    require('Database.php');
+    
+    $sql = "SELECT * FROM orders;";
+    
+    $result = $conn->query($sql);
+    
+    
+    
+    $state=false ;
+
+    while($row = $result->fetch()){
+            
+        if($_POST["id"] ==  $row["o_id"])
+        {
+            
+            $state=true;
+        }
+    } 
+   
+    echo json_encode(["state"=>$state]);
+}
+
+function checkEditProductValidation(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM product WHERE p_id = '".$_POST["id"]."' AND s_id = '".$_SESSION["id"]."'  ;";
+    
+    $result = $conn->query($sql);
+    
+    
+    
+    $state=false ;
+
+    if($row = $result->fetch()){
+            
+       
+            
+            $state=true;
+        
+    } 
+   
+    echo json_encode(["state"=>$state]);
+}
+
+function checkOrderSellerValidation(){
+    require('Database.php');
+    session_start();
+    
+    $sql = "SELECT * FROM orders WHERE o_id = '".$_POST["id"]."' ;";
+    
+    $result = $conn->query($sql);
+
+    $state = false;
+
+    while($row = $result->fetch())
+    {
+        $sql_2 = "SELECT * FROM orderedproducts WHERE o_id = '".$row["o_id"]."' ;";
+    
+        $result_2 = $conn->query($sql_2);
+
+        while($row_2=$result_2->fetch()){
+            
+            $sql_3 = "SELECT * FROM product WHERE p_id = '".$row_2["p_id"]."' AND s_id = '".$_SESSION["id"]."' ;";
+            
+            $result_3 = $conn->query($sql_3);
+            
+            while($row_3 = $result_3->fetch()){
+
+                
+                    $state=true;
+                }
+                
+
+        }
+
+
+    }
+    echo json_encode(["state"=>$state]);
+
+}
 function sendReview(){
     require('Database.php');
     session_start();
@@ -566,6 +650,28 @@ function checkReview(){
     echo json_encode(["state"=>$state]);
 }
 
+function checkFeedbackValidation(){
+    require('Database.php');
+    
+    $sql = "SELECT * FROM feedback;";
+    
+    $result = $conn->query($sql);
+    
+    
+    
+    $state=false ;
+
+    while($row = $result->fetch()){
+            
+        if($_POST["id"] ==  $row["f_id"])
+        {
+            
+            $state=true;
+        }
+    } 
+   
+    echo json_encode(["state"=>$state]);
+}
 function getFeedbacks (){
 
     require('Database.php');

@@ -7,6 +7,78 @@ let shippingFees = document.querySelector("#shippingFees");
 let grand_total = document.querySelector("#final-grand-total");
 let lastID;
 document.addEventListener("DOMContentLoaded", async () => {
+    let authState = await checkAuth();
+    let userType = await getUserType();
+    if (authState["state"]) {
+        if (userType["type"] == "admin") {
+            window.location.href = "../../Admin/adminHome/adminhome.html";
+        } else if (userType["type"] == "seller") {
+            window.location.href = "../../Seller/SellerPage/sellerhome.html";
+        }
+    } else {
+        window.location.href = "../../LoginPage.html";
+    }
+
+    async function checkAuth() {
+        const data = {
+            functionName: "checkAuth",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/AccountManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    async function getUserType() {
+        const data = {
+            functionName: "getUserType",
+        };
+
+        console.log(data);
+
+        try {
+            console.log(JSON.stringify(data));
+
+            let response = await fetch("../../PHP/AccountManagement.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            console.log("hi");
+            // console.log(response.json());
+            console.log("hi");
+            // console.log(response.json());
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
     let productsInCart = await getCart();
     console.log(productsInCart);
 
@@ -358,13 +430,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     let checkoutBtn = document.querySelector("#Checkout");
 
     checkoutBtn.addEventListener("click", async () => {
-        let orderId = await makeOrder(
-            savedAddresses.value,
-            grand_total.innerHTML,
-            await getCart()
-        );
-        console.log(await orderId);
-        window.location.href = `../DetailOrderPage/index.html?id=${await orderId.id}`;
+        if (
+            addressField.innerHTML != "Not Selected" &&
+            tBody.innerHTML.trim().length != 0
+        ) {
+            let orderId = await makeOrder(
+                savedAddresses.value,
+                grand_total.innerHTML,
+                await getCart()
+            );
+            console.log(await orderId);
+            window.location.href = `../DetailOrderPage/index.html?id=${await orderId.id}`;
+        }
     });
 
     async function makeOrder(address, total, products) {
