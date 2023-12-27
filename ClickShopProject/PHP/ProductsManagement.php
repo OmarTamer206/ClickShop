@@ -315,7 +315,20 @@ function addToCart(){
     session_start();
     
     if(isset($_SESSION["id"])){
-        $sql = "INSERT INTO cart (c_id,p_id,cart_qty) VALUES ('".$_SESSION["id"]."' , '".$_POST["productId"]."' , '".$_POST["qty"]."') ;";
+
+        $sql_0 = "SELECT * FROM cart WHERE c_id = '".$_SESSION["id"]."' AND p_id= '".$_POST["productId"]."' ;";
+        
+        $result_0 = $conn->query($sql_0);
+
+
+        if($row_0 = $result_0->fetch()){
+            $sql = "UPDATE cart SET  cart_qty='".$row_0["cart_qty"] + $_POST["qty"]."' WHERE  c_id = '".$_SESSION["id"]."' AND p_id ='".$_POST["productId"]."' ";
+
+        }
+        else{
+
+            $sql = "INSERT INTO cart (c_id,p_id,cart_qty) VALUES ('".$_SESSION["id"]."' , '".$_POST["productId"]."' , '".$_POST["qty"]."') ;";
+        }
     
     
         $result = $conn->query($sql);
