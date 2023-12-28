@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             >
                             <span class="info"
                                 >Total Price:
-                                <span class="Ototal">${sumPrice}</span></span
+                                <span class="Ototal">${sumPrice} L.E</span></span
                                 >
                                 </div>
                     </a>

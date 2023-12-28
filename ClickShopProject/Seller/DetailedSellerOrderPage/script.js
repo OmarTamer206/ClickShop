@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <span class="OQuantity">${sellerReport["sellerOrders"][id][product].qty}</span></span
             >
             <span class="info"
-                >Price: <span class="OPrice">${sellerReport["sellerOrders"][id][product].price}</span></span
+                >Price: <span class="OPrice">${sellerReport["sellerOrders"][id][product].price} L.E</span></span
             >
         </div>
                     `;
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             sellerReport["sellerOrders"][id][product].price *
             sellerReport["sellerOrders"][id][product].qty;
     }
-    orderTotal.innerHTML = sumPrice;
+    orderTotal.innerHTML = sumPrice + " L.E";
     orderDate.innerHTML = sellerReport["sellerOrders"][id][0].date;
     orderId.innerHTML = id;
 

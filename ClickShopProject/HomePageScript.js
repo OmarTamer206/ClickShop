@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         </div>
                         <h3>${bestProducts["products"][product].name}</h3>
     
-                        <p>${bestProducts["products"][product].price}</p>
+                        <p>${bestProducts["products"][product].price} L.E</p>
     
                         <div class="ratingP">
                             <span class="ratesStars">

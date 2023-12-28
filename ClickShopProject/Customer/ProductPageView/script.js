@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let productData = await getProductDetails();
     productImage.src = `../../Media/ProductImages/${productData["products"][0].image}`;
     productName.innerHTML = productData["products"][0].name;
-    productPrice.innerHTML = "$" + productData["products"][0].price;
+    productPrice.innerHTML = productData["products"][0].price + " L.E";
     productQty.max = productData["products"][0].qty;
     productDetails.innerHTML = productData["products"][0].desc;
 

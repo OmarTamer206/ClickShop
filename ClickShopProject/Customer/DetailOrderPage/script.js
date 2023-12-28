@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 >Price: <span class="OPrice">${
                     orderDetails["products"][product].qty *
                     orderDetails["products"][product].price
-                }</span></span
+                }</span> L.E</span
             >
         </div>
     </tr>
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     orderId.innerHTML = id;
     orderDate.innerHTML = orderDetails["orderDate"];
-    orderTotal.innerHTML = orderDetails["orderTotal"];
+    orderTotal.innerHTML = orderDetails["orderTotal"] + " L.E";
 
     async function getOrderDetails() {
         const data = {

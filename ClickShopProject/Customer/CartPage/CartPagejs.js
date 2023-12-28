@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 
             </div>
         </td>
-        <td>$${productsInCart["products"][product].price}</td>
+        <td>${productsInCart["products"][product].price} L.E</td>
         <td>
             <div class="quantitycontrol">
                 <button id="M${product}" class="minus">-</button>
@@ -110,10 +110,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button id="P${product}" class="plus">+</button>
             </div>
         </td>
-        <td class="s-t" >$<span id="subtotal${product}">${
+        <td class="s-t" ><span id="subtotal${product}">${
             productsInCart["products"][product].price *
             productsInCart["products"][product].qty
-        }</span></td>
+        }</span> L.E</td>
         <td id="delete${product}"><span class="deletebtn" ><i class='bx bx-x'></i></i></a></span></td>
     </tr>
         `;

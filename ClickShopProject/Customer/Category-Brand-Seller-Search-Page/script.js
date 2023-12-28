@@ -50,7 +50,7 @@ function makeCards(data) {
         </div>
         <h3>${data["products"][product].name}</h3>
     
-        <p>$${data["products"][product].price}</p>
+        <p>${data["products"][product].price} L.E</p>
     
         <div class="PSPrating">
             <span class="PSPratesStars">

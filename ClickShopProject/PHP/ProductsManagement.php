@@ -740,6 +740,10 @@ function sendFeedbackReply(){
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
 
+    $sql_0 = "SELECT * FROM feedback WHERE f_id = '".$_POST["id"]."';";
+    $result_0 = $conn->query($sql_0);
+    $row_0 = $result_0->fetch();
+
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
@@ -751,9 +755,9 @@ function sendFeedbackReply(){
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
-    $mail->setFrom('clickshop@gmail.com'); //gmail
+    $mail->setFrom('coursesoverflow2023@gmail.com'); //gmail
 
-    $mail->addAddress("coursesoverflow2023@gmail.com"); //to who
+    $mail->addAddress($row_0["f_email"]); //to who
 
     $mail->isHTML(true);
 
