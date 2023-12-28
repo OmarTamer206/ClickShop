@@ -29,6 +29,7 @@ let productReviews = document.querySelector(".CommentAndRating");
 let productSwipers = document.querySelector(".swiper-wrapper");
 let rateDiv = document.querySelector(".rateDiv");
 let addToCartBtn = document.querySelector("#addCart");
+let outStock = document.querySelector("#outStock");
 
 document.addEventListener("DOMContentLoaded", async () => {
     let userType = await getUserType();
@@ -74,6 +75,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     productPrice.innerHTML = productData["products"][0].price + " L.E";
     productQty.max = productData["products"][0].qty;
     productDetails.innerHTML = productData["products"][0].desc;
+
+    if (productData["products"][0].qty == 0) {
+        outStock.innerHTML = "PRODUCT IS OUT OF STOCK";
+        productQty.hidden = true;
+        addToCartBtn.hidden = true;
+    }
 
     for (let i = 0; i < productData["products"][0].rate; i++) {
         productStarsContainer.innerHTML += `<img src="../../Media/Stars/filledStar.png" alt="" />`;
